@@ -3,7 +3,7 @@
     <PropertyGroup>
         <!-- Assembly and projecto details -->
         <!-- https://docs.microsoft.com/en-us/dotnet/standard/frameworks -->
-        <TargetFrameworks>net5.0;netstandard2.0;netstandard2.1;net462;net48;netcoreapp2.0;netcoreapp3.0;netcoreapp3.1</TargetFrameworks>
+        <TargetFrameworks>net5.0;netstandard2.0;netstandard2.1;net462;net48;netcoreapp3.1</TargetFrameworks>
         <AssemblyName>PowerUtils.Text</AssemblyName>
         <RootNamespace>PowerUtils.Text</RootNamespace>
 
@@ -63,12 +63,6 @@
     </PropertyGroup>
     <PropertyGroup Condition=" '$(TargetFramework)' == 'net48' ">
         <DefineConstants>NETFRAMEWORK;NET48</DefineConstants>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.0' ">
-        <DefineConstants>NETCOREAPP;NETCOREAPP2_0</DefineConstants>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.0' ">
-        <DefineConstants>NETCOREAPP;NETCOREAPP3_0</DefineConstants>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' ">
         <DefineConstants>NETCOREAPP;NETCOREAPP3_1</DefineConstants>

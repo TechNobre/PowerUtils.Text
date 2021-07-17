@@ -79,7 +79,7 @@ namespace PowerUtils.Text.Tests
         public void CleanExtraLineBreakAndLineBreak_HelloWorld_ReturnStringWithoutDoubleSLineBreakAndDoubleSplaces()
         {
             // Arrange
-            var input = "   Hello \r\n\r\n\r\n  World!!! ";
+            var input = "   Hello " + Environment.NewLine + Environment.NewLine + Environment.NewLine + "  World!!! ";
 
 
             // Act
@@ -88,7 +88,7 @@ namespace PowerUtils.Text.Tests
 
             // Assert
             act.Should()
-                .Be("Hello\r\nWorld!!!");
+                .Be("Hello" + Environment.NewLine + "World!!!");
         }
     }
 }
