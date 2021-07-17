@@ -12,17 +12,23 @@
         <title>PowerUtils.Text</title>
         <Product>PowerUtils.Text</Product>
         <Version>1.0.0</Version>
-        <PackageLicenseUrl>http://opensource.org/licenses/Apache-2.0</PackageLicenseUrl>
-        <PackageOutputPath>bin\</PackageOutputPath>
-        <PackageProjectUrl>https://nuget.org/packages/NuGet.Packager1</PackageProjectUrl>
+
         <Authors>Nelson Nobre</Authors>
         <Company>TechNobre</Company>
-        <Description>Utilities for working with text</Description>
-        <PackageReleaseNotes>Utilities for working with text</PackageReleaseNotes>
-        <PackageTags>PowerUtils Utils Helpers Text Formatting Extension Extensions String</PackageTags>
-        <NeutralLanguage>en-GB</NeutralLanguage>
+
+        <License>MIT</License>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <Copyright>Copyright © 2018 by TechNobre</Copyright>
-        <PackageIconUrl>https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/NuGet_project_logo.svg/220px-NuGet_project_logo.svg.png</PackageIconUrl>
+
+        <Description>Helpers, extensions and utilities for manipulating</Description>
+        <PackageReleaseNotes>Helpers, extensions and utilities for manipulating</PackageReleaseNotes>
+        <Summary>Helpers, extensions and utilities for manipulating</Summary>
+        <PackageTags>PowerUtils;Utils;Helpers;Text;Formatting;Extension;Extensions;String</PackageTags>
+        <RepositoryUrl>https://github.com/TechNobre/PowerUtils.Text</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/TechNobre/PowerUtils.Text</PackageProjectUrl>
+        <NeutralLanguage>en-GB</NeutralLanguage>
+        
+        <PackageOutputPath>bin\</PackageOutputPath>
     </PropertyGroup>
 
 
@@ -70,5 +76,9 @@
     <PropertyGroup Condition=" '$(TargetFramework)' == 'net5.0' ">
         <DefineConstants>NET;NET5</DefineConstants>
     </PropertyGroup>
+
+    <ItemGroup>
+      <None Include="..\LICENSE" Pack="true" PackagePath=""/>
+    </ItemGroup>
 
 </Project>

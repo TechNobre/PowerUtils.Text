@@ -1,20 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace PowerUtils.Text
 {
+    /// <summary>
+    /// Extensions for manipulating strings
+    /// </summary>
     public static class PowerUtilsExtensions
     {
-        #region PRIVATE VARIABLES
-        private static readonly List<char> CHARS_TO_SPLIT1 = new List<char>() { ' ', '-', '.', '(' };
-        private static readonly List<char> CHARS_TO_SPLIT2 = new List<char>() { '\'' };
-        #endregion
-
         /// <summary>
         /// Clean extra spaces. Replace tabs to one space and double spaces to one space
         /// </summary>
-        /// <param name="text">Text input</param>
+        /// <param name="input">Text input</param>
         /// <returns>Clear string</returns>
         public static string CleanExtraSpaces(this string input)
         {

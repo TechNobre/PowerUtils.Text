@@ -1,6 +1,5 @@
 # PowerUtils.Text
-
-
+Helpers, extensions and utilities for manipulating
 
 ## Support to
 - .NET 2.0 or more
@@ -57,7 +56,7 @@ var result = "       ".EmptyOrWhiteSpace();
 Compress text if greater the max length
 
 ```csharp
-// result = "Hell…"
+// result = "Hellï¿½"
 var result = "Hello world!!!".CompressText(5);
 ```
 
@@ -80,4 +79,4 @@ var result = "Hello world!!!".Truncate(5);
 
 ## LICENSE
 
-[MIT](https://github.com/NelsonBN/demo-rabbitmq/blob/main/LICENSE)
+[MIT](https://github.com/TechNobre/PowerUtils.Text/blob/main/LICENSE)
