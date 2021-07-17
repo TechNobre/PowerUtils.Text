@@ -3,7 +3,7 @@ Helpers, extensions and utilities for manipulating
 
 | Package            |  Version | Downloads |
 | ---                | ---      | ---       |
-| `PowerUtils.Text`  | [![NuGet](https://img.shields.io/nuget/v/Flunt.svg)](https://www.nuget.org/packages/PowerUtils.Text) | [![Nuget](https://img.shields.io/nuget/dt/Flunt.svg)](https://www.nuget.org/packages/PowerUtils.Text) |
+| `PowerUtils.Text`  | [![NuGet](https://img.shields.io/nuget/v/PowerUtils.Text.svg)](https://www.nuget.org/packages/PowerUtils.Text) | [![Nuget](https://img.shields.io/nuget/dt/PowerUtils.Text.svg)](https://www.nuget.org/packages/PowerUtils.Text) |
 
 ## Support to
 - .NET 2.0 or more
