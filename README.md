@@ -1,14 +1,31 @@
 # PowerUtils.Text
 Helpers, extensions and utilities for manipulating
 
-| Package            |  Version | Downloads |
-| ---                | ---      | ---       |
-| `PowerUtils.Text`  | [![NuGet](https://img.shields.io/nuget/v/PowerUtils.Text.svg)](https://www.nuget.org/packages/PowerUtils.Text) | [![Nuget](https://img.shields.io/nuget/dt/PowerUtils.Text.svg)](https://www.nuget.org/packages/PowerUtils.Text) |
+![CI](https://github.com/TechNobre/PowerUtils.Text/actions/workflows/main.yml/badge.svg)
+[![NuGet](https://img.shields.io/nuget/v/PowerUtils.Text.svg)](https://www.nuget.org/packages/PowerUtils.Text)
+[![Nuget](https://img.shields.io/nuget/dt/PowerUtils.Text.svg)](https://www.nuget.org/packages/PowerUtils.Text)
+
+
 
 ## Support to
 - .NET 2.0 or more
 - .NET Framework 4.6.2 or more
 - .NET Standard 2.0 or more
+
+
+
+## Features
+
+- [Extensions](#Extensions)
+  - [CleanExtraSpaces](#string.CleanExtraSpaces)
+  - [CleanExtraLineBreak](#string.CleanExtraLineBreak)
+  - [CleanExtraLineBreakAndLineBreak](#string.CleanExtraLineBreakAndLineBreak)
+  - [EmptyOrWhiteSpace](#string.EmptyOrWhiteSpace)
+  - [CompressText](#string.CompressText)
+  - [Truncate](#string.Truncate)
+  - [UppercaseFirst](#string.UppercaseFirst)
+  - [CapitalizeName](#string.CapitalizeName)
+  - [CleanSpecialCharacters](#string.CleanSpecialCharacters)
 
 
 
@@ -29,11 +46,9 @@ Install-Package PowerUtils.Text
 dotnet add package PowerUtils.Text
 ```
 
-### Extensions
+### Extensions <a name="Extensions"></a>
 
-
-#### string.CleanExtraSpaces();
-
+#### string.CleanExtraSpaces(); <a name="string.CleanExtraSpaces"></a>
 Clean extra spaces. Replace tabs to one space and double spaces to one space
 
 ```csharp
@@ -41,9 +56,7 @@ Clean extra spaces. Replace tabs to one space and double spaces to one space
 var result = " Hello  world!!! ".CleanExtraSpaces();
 ```
 
-
-#### string.CleanExtraLineBreak();
-
+#### string.CleanExtraLineBreak(); <a name="string.CleanExtraLineBreak"></a>
 Clean extra line breaks. Replace double line breaks to one line break
 
 ```csharp
@@ -51,8 +64,7 @@ Clean extra line breaks. Replace double line breaks to one line break
 var result = "Hello\r\n\r\n\r\nWorld!!!".CleanExtraLineBreak();
 ```
 
-#### string.CleanExtraLineBreakAndLineBreak();
-
+#### string.CleanExtraLineBreakAndLineBreak(); <a name="string.CleanExtraLineBreakAndLineBreak"></a>
 Clean extra spaces, override tabs to one space, double spaces to one space and double line breaks to one line break
 
 ```csharp
@@ -60,8 +72,7 @@ Clean extra spaces, override tabs to one space, double spaces to one space and d
 var result = "   Hello \r\n\r\n\r\n  World!!! ".CleanExtraLineBreakAndLineBreak();
 ```
 
-#### string.EmptyOrWhiteSpace();
-
+#### string.EmptyOrWhiteSpace(); <a name="string.EmptyOrWhiteSpace"></a>
 Convert a string with empty or white spaces to null
 
 ```csharp
@@ -69,22 +80,47 @@ Convert a string with empty or white spaces to null
 var result = "       ".EmptyOrWhiteSpace();
 ```
 
-#### string.CompressText(maxLength);
-
+#### string.CompressText(maxLength); <a name="string.CompressText"></a>
 Compress text if greater the max length
 
 ```csharp
-// result = "Hell�"
+// result = "Hell..."
 var result = "Hello world!!!".CompressText(5);
 ```
 
-#### string.Truncate(maxLength);
-
+#### string.Truncate(maxLength); <a name="string.Truncate"></a>
 Truncate text if greater the max length
 
 ```csharp
 // result = "Hello"
 var result = "Hello world!!!".Truncate(5);
+```
+
+#### string.UppercaseFirst(); <a name="string.UppercaseFirst"></a>
+Uppercase the first character
+
+```csharp
+// result = "Hello world!!!"
+var result = "hello world!!!".UppercaseFirst();
+```
+
+#### string.CapitalizeName(); <a name="string.CapitalizeName"></a>
+Capitalize the people amd company names
+
+```csharp
+// result = "Nelson Nobre"
+var result = "nelson nobre".CapitalizeName();
+```
+
+#### string.CleanSpecialCharacters(substitute = ""); <a name="string.CleanSpecialCharacters"></a>
+Capitalize the people amd company names
+
+```csharp
+// result1 = "HelloWorld"
+var result1 = "Hello World!!!".CleanSpecialCharacters();
+
+// result2 = "Hello-World"
+var result2 = "Hello World".CleanSpecialCharacters("-");
 ```
 
 
@@ -98,3 +134,15 @@ var result = "Hello world!!!".Truncate(5);
 ## LICENSE
 
 [MIT](https://github.com/TechNobre/PowerUtils.Text/blob/main/LICENSE)
+
+
+
+## Release Notes
+
+
+### v1.1.0 - 2021/07/18
+
+#### New features
+- Added extension **string.UppercaseFirst()**. To uppercase the first character;
+- Added extension **string.CapitalizeName()**. To capitalize the people and company names;
+- Added extension **string.CleanSpecialCharacters()**. To replace all special characters in a string for other character;
