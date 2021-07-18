@@ -71,7 +71,8 @@
         <DefineConstants>NET;NET5</DefineConstants>
     </PropertyGroup>
 
-    <ItemGroup>
+
+	<ItemGroup>
       <None Include="..\LICENSE" Pack="true" PackagePath=""/>
     </ItemGroup>
 
