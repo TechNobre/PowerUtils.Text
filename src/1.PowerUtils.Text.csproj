@@ -32,6 +32,15 @@
     </PropertyGroup>
 
 
+    <!-- DOCUMENTATION -->
+    <PropertyGroup>
+      <DocumentationFile>bin\PowerUtils.Text.xml</DocumentationFile>
+      <GenerateDocumentationFile>true</GenerateDocumentationFile>
+      <NoWarn>$(NoWarn);1591</NoWarn>
+      <!-- Prevent XML documentation warnings -->
+    </PropertyGroup>
+
+
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
         <DebugSymbols>true</DebugSymbols>
@@ -48,7 +57,6 @@
         <DefineConstants>RELEASE;TRACE</DefineConstants>
         <ErrorReport>none</ErrorReport>
         <WarningLevel>4</WarningLevel>
-        <DocumentationFile>bin\PowerUtils.Text.xml</DocumentationFile>
     </PropertyGroup>
 
 
@@ -72,8 +80,8 @@
     </PropertyGroup>
 
 
-	<ItemGroup>
-      <None Include="..\LICENSE" Pack="true" PackagePath=""/>
-    </ItemGroup>
+  <ItemGroup>
+    <None Include="..\LICENSE" Pack="true" PackagePath=""/>
+  </ItemGroup>
 
 </Project>
