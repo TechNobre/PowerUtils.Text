@@ -143,6 +143,12 @@ var result2 = "Hello World".CleanSpecialCharacters("-");
 ### v1.1.0 - 2021/07/18
 
 #### New features
-- Added extension **string.UppercaseFirst()**. To uppercase the first character;
-- Added extension **string.CapitalizeName()**. To capitalize the people and company names;
-- Added extension **string.CleanSpecialCharacters()**. To replace all special characters in a string for other character;
+- Added extension `string.UppercaseFirst()`. To uppercase the first character;
+- Added extension `string.CapitalizeName()`. To capitalize the people and company names;
+- Added extension `string.CleanSpecialCharacters()`. To replace all special characters in a string for other character;
+
+
+
+### v1.0.0 - 2021/07/18
+
+- Kick start project

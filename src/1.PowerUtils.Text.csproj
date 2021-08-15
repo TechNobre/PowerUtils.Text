@@ -20,9 +20,9 @@
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <Copyright>Copyright © 2018 by TechNobre</Copyright>
 
-        <Description>Helpers, extensions and utilities for manipulating</Description>
+        <Description>Helpers, extensions and utilities for manipulating strings</Description>
         <PackageReleaseNotes>Added extension string.UppercaseFirst(); Added extension string.CapitalizeName(); Added extension string.CleanSpecialCharacters();</PackageReleaseNotes>
-        <Summary>Helpers, extensions and utilities for manipulating</Summary>
+        <Summary>Helpers, extensions and utilities for manipulating strings</Summary>
         <PackageTags>PowerUtils;Utils;Helpers;Text;Formatting;Extension;Extensions;String</PackageTags>
         <RepositoryUrl>https://github.com/TechNobre/PowerUtils.Text</RepositoryUrl>
         <PackageProjectUrl>https://github.com/TechNobre/PowerUtils.Text</PackageProjectUrl>
@@ -83,5 +83,6 @@
   <ItemGroup>
     <None Include="..\LICENSE" Pack="true" PackagePath=""/>
   </ItemGroup>
+
 
 </Project>
