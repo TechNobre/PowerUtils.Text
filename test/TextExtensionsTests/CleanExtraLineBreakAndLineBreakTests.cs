@@ -2,12 +2,12 @@
 using System;
 using Xunit;
 
-namespace PowerUtils.Text.Tests
+namespace PowerUtils.Text.Tests.TextExtensionsTests
 {
+    [Trait("Extension", "CleanExtraLineBreakAndLineBreak")]
     public class CleanExtraLineBreakAndLineBreakTests
     {
         [Fact(DisplayName = "String null should return empty")]
-        [Trait("Extension", "CleanExtraLineBreakAndLineBreak")]
         public void CleanExtraLineBreakAndLineBreak_Null_ReturnNull()
         {
             // Arrange
@@ -24,7 +24,6 @@ namespace PowerUtils.Text.Tests
         }
 
         [Fact(DisplayName = "String only empty should return empty")]
-        [Trait("Extension", "CleanExtraLineBreakAndLineBreak")]
         public void CleanExtraLineBreakAndLineBreak_Empty_ReturnEmpty()
         {
             // Arrange
@@ -41,7 +40,6 @@ namespace PowerUtils.Text.Tests
         }
 
         [Fact(DisplayName = "String with double spaces")]
-        [Trait("Extension", "CleanExtraLineBreakAndLineBreak")]
         public void CleanExtraLineBreakAndLineBreak_WithDoubleSpaces_resultEqualsInput()
         {
             // Arrange
@@ -58,7 +56,6 @@ namespace PowerUtils.Text.Tests
         }
 
         [Fact(DisplayName = "String with line breaks must keep the double spaces")]
-        [Trait("Extension", "CleanExtraLineBreakAndLineBreak")]
         public void CleanExtraLineBreakAndLineBreak_LineBreaks_ReturnStringWithLineBreaks()
         {
             // Arrange
@@ -75,7 +72,6 @@ namespace PowerUtils.Text.Tests
         }
 
         [Fact(DisplayName = "String with double spaces and line breaks - Hello world test")]
-        [Trait("Extension", "CleanExtraLineBreakAndLineBreak")]
         public void CleanExtraLineBreakAndLineBreak_HelloWorld_ReturnStringWithoutDoubleSLineBreakAndDoubleSplaces()
         {
             // Arrange

@@ -1,12 +1,12 @@
 ﻿using FluentAssertions;
 using Xunit;
 
-namespace PowerUtils.Text.Tests
+namespace PowerUtils.Text.Tests.TextExtensionsTests
 {
-    public class TruncateTests
+    [Trait("Extension", "CompressText")]
+    public class CompressTextTests
     {
         [Fact(DisplayName = "String null should return null")]
-        [Trait("Extension", "Truncate")]
         public void CompressText_Null_ReturnNull()
         {
             // Arrange
@@ -14,7 +14,7 @@ namespace PowerUtils.Text.Tests
 
 
             // Act
-            var act = input.Truncate(50);
+            var act = input.CompressText(50);
 
 
             // Assert
@@ -23,15 +23,14 @@ namespace PowerUtils.Text.Tests
         }
 
         [Fact(DisplayName = "String only empty should return empty")]
-        [Trait("Extension", "Truncate")]
-        public void Truncate_Empty_ReturnEmpty()
+        public void CompressText_Empty_ReturnEmpty()
         {
             // Arrange
             var input = string.Empty;
 
 
             // Act
-            var act = input.Truncate(50);
+            var act = input.CompressText(50);
 
 
             // Assert
@@ -40,8 +39,7 @@ namespace PowerUtils.Text.Tests
         }
 
         [Fact(DisplayName = "String less max length should return the input")]
-        [Trait("Extension", "Truncate")]
-        public void Truncate_LessMaxLength_ReturnEqualsInput1()
+        public void CompressText_LessMaxLength_ReturnEqualsInput1()
         {
             // Arrange
             var input = "HelLo";
@@ -49,7 +47,7 @@ namespace PowerUtils.Text.Tests
 
 
             // Act
-            var act = input.Truncate(maxLength);
+            var act = input.CompressText(maxLength);
 
 
             // Assert
@@ -60,8 +58,7 @@ namespace PowerUtils.Text.Tests
         }
 
         [Fact(DisplayName = "String less max length should return the input 1")]
-        [Trait("Extension", "Truncate")]
-        public void Truncate_LessMaxLength_ReturnEqualsInput2()
+        public void CompressText_LessMaxLength_ReturnEqualsInput2()
         {
             // Arrange
             var input = "HelLo";
@@ -69,7 +66,7 @@ namespace PowerUtils.Text.Tests
 
 
             // Act
-            var act = input.Truncate(maxLength);
+            var act = input.CompressText(maxLength);
 
 
             // Assert
@@ -81,8 +78,7 @@ namespace PowerUtils.Text.Tests
 
 
         [Fact(DisplayName = "String equals to max length should return the input")]
-        [Trait("Extension", "Truncate")]
-        public void Truncate_EqualsMaxLength_ReturnEqualsInput()
+        public void CompressText_EqualsMaxLength_ReturnEqualsInput()
         {
             // Arrange
             var input = "Hello";
@@ -90,19 +86,18 @@ namespace PowerUtils.Text.Tests
 
 
             // Act
-            var act = input.Truncate(maxLength);
+            var act = input.CompressText(maxLength);
 
 
             // Assert
             act.Should()
-                .Be("Hell");
+                .Be("Hel…");
             act.Should()
                 .HaveLength(maxLength);
         }
 
         [Fact(DisplayName = "String greater to max length should return the input")]
-        [Trait("Extension", "Truncate")]
-        public void Truncate_GreaterMaxLength_ReturnCompressedText1()
+        public void CompressText_GreaterMaxLength_ReturnCompressedText()
         {
             // Arrange
             var input = "Hello world!!!";
@@ -110,32 +105,12 @@ namespace PowerUtils.Text.Tests
 
 
             // Act
-            var act = input.Truncate(maxLength);
+            var act = input.CompressText(maxLength);
 
 
             // Assert
             act.Should()
-                .Be("Hello");
-            act.Should()
-                .HaveLength(maxLength);
-        }
-
-        [Fact(DisplayName = "String greater to max length should return the input")]
-        [Trait("Extension", "Truncate")]
-        public void Truncate_GreaterMaxLength_ReturnCompressedText2()
-        {
-            // Arrange
-            var input = "Hello world!!!";
-            var maxLength = 6;
-
-
-            // Act
-            var act = input.Truncate(maxLength);
-
-
-            // Assert
-            act.Should()
-                .Be("Hello ");
+                .Be("Hell…");
             act.Should()
                 .HaveLength(maxLength);
         }

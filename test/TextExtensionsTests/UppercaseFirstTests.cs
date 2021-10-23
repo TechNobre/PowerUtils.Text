@@ -1,12 +1,12 @@
 ﻿using FluentAssertions;
 using Xunit;
 
-namespace PowerUtils.Text.Tests
+namespace PowerUtils.Text.Tests.TextExtensionsTests
 {
+    [Trait("Extension", "UppercaseFirst")]
     public class UppercaseFirstTests
     {
         [Fact(DisplayName = "String null should return null")]
-        [Trait("Extension", "UppercaseFirst")]
         public void CompressText_Null_ReturnNull()
         {
             // Arrange
@@ -23,7 +23,6 @@ namespace PowerUtils.Text.Tests
         }
 
         [Fact(DisplayName = "String only empty should return empty")]
-        [Trait("Extension", "UppercaseFirst")]
         public void UppercaseFirst_Empty_ReturnEmpty()
         {
             // Arrange
@@ -40,7 +39,6 @@ namespace PowerUtils.Text.Tests
         }
 
         [Fact(DisplayName = "String with spaces before text")]
-        [Trait("Extension", "UppercaseFirst")]
         public void UppercaseFirst_LessMaxLength_ReturnEqualsInput1()
         {
             // Arrange
@@ -57,7 +55,6 @@ namespace PowerUtils.Text.Tests
         }
 
         [Fact(DisplayName = "String with spaces before text")]
-        [Trait("Extension", "UppercaseFirst")]
         public void UppercaseFirst_LessMaxLength_ReturnEqualsInput2()
         {
             // Arrange
@@ -74,7 +71,6 @@ namespace PowerUtils.Text.Tests
         }
 
         [Fact(DisplayName = "String lowercase")]
-        [Trait("Extension", "UppercaseFirst")]
         public void UppercaseFirst_Lowercase_ReturnsupperFirstCharacter()
         {
             // Arrange
@@ -91,7 +87,6 @@ namespace PowerUtils.Text.Tests
         }
 
         [Fact(DisplayName = "String lowercase with first character already upper")]
-        [Trait("Extension", "UppercaseFirst")]
         public void UppercaseFirst_AlreadyUpper_ReturnsupperFirstCharacter()
         {
             // Arrange
