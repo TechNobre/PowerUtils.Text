@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{15AC4A5C-3226-4925-BB3F-2572F157EC92}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		global.json = global.json
 		LICENSE = LICENSE
 		.github\workflows\main.yml = .github\workflows\main.yml
 		README.md = README.md

@@ -1,11 +1,12 @@
 ﻿using FluentAssertions;
 using Xunit;
-namespace PowerUtils.Text.Tests
+
+namespace PowerUtils.Text.Tests.TextExtensionsTests
 {
+    [Trait("Extension", "EmptyOrWhiteSpace")]
     public class EmptyOrWhiteSpaceTests
     {
         [Fact(DisplayName = "String null should return null")]
-        [Trait("Extension", "EmptyOrWhiteSpace")]
         public void EmptyOrWhiteSpace_Null_ReturnNull()
         {
             // Arrange
@@ -22,7 +23,6 @@ namespace PowerUtils.Text.Tests
         }
 
         [Fact(DisplayName = "String only empty should return null")]
-        [Trait("Extension", "EmptyOrWhiteSpace")]
         public void EmptyOrWhiteSpace_Empty_ReturnNull()
         {
             // Arrange
@@ -39,7 +39,6 @@ namespace PowerUtils.Text.Tests
         }
 
         [Fact(DisplayName = "String with white spaces should return null")]
-        [Trait("Extension", "EmptyOrWhiteSpace")]
         public void EmptyOrWhiteSpace_WithWhiteSpaces_ReturnNull()
         {
             // Arrange
@@ -56,7 +55,6 @@ namespace PowerUtils.Text.Tests
         }
 
         [Fact(DisplayName = "String filled should return the input")]
-        [Trait("Extension", "EmptyOrWhiteSpace")]
         public void EmptyOrWhiteSpace_Filled_ReturnEqualsInput()
         {
             // Arrange

@@ -2,12 +2,12 @@ using FluentAssertions;
 using System;
 using Xunit;
 
-namespace PowerUtils.Text.Tests
+namespace PowerUtils.Text.Tests.TextExtensionsTests
 {
+    [Trait("Extension", "CleanExtraSpaces")]
     public class CleanExtraSpacesTests
     {
         [Fact(DisplayName = "String only empty should return null")]
-        [Trait("Extension", "CleanExtraSpaces")]
         public void CleanExtraSpaces_Null_ReturnNull()
         {
             // Arrange
@@ -24,7 +24,6 @@ namespace PowerUtils.Text.Tests
         }
 
         [Fact(DisplayName = "String only empty should return empty")]
-        [Trait("Extension", "CleanExtraSpaces")]
         public void CleanExtraSpaces_Empty_ReturnEmpty()
         {
             // Arrange
@@ -41,7 +40,6 @@ namespace PowerUtils.Text.Tests
         }
 
         [Fact(DisplayName = "String with double spaces")]
-        [Trait("Extension", "CleanExtraSpaces")]
         public void CleanExtraSpaces_WithDoubleSpaces_ReturnStringWithoutDoubleSpaces()
         {
             // Arrange
@@ -58,7 +56,6 @@ namespace PowerUtils.Text.Tests
         }
 
         [Fact(DisplayName = "String with line breaks must keep the line breaks")]
-        [Trait("Extension", "CleanExtraSpaces")]
         public void CleanExtraSpaces_LineBreaks_ReturnStringWithLineBreaks()
         {
             // Arrange
@@ -75,7 +72,6 @@ namespace PowerUtils.Text.Tests
         }
 
         [Fact(DisplayName = "String with double spaces - Hello world test")]
-        [Trait("Extension", "CleanExtraSpaces")]
         public void CleanExtraSpaces_HelloWorld_ReturnStringWithoutDoubleSpaces()
         {
             // Arrange

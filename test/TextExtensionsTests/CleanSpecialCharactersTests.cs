@@ -1,12 +1,12 @@
 ﻿using FluentAssertions;
 using Xunit;
 
-namespace PowerUtils.Text.Tests
+namespace PowerUtils.Text.Tests.TextExtensionsTests
 {
+    [Trait("Extension", "CleanSpecialCharacters")]
     public class CleanSpecialCharactersTests
     {
         [Fact(DisplayName = "String null should return null")]
-        [Trait("Extension", "CleanSpecialCharacters")]
         public void CompressText_Null_ReturnNull()
         {
             // Arrange
@@ -23,7 +23,6 @@ namespace PowerUtils.Text.Tests
         }
 
         [Fact(DisplayName = "String only empty should return empty")]
-        [Trait("Extension", "CleanSpecialCharacters")]
         public void CleanSpecialCharacters_Empty_ReturnEmpty()
         {
             // Arrange
@@ -40,7 +39,6 @@ namespace PowerUtils.Text.Tests
         }
 
         [Theory(DisplayName = "Test texts - Replace to other character")]
-        [Trait("Extension", "CleanSpecialCharacters")]
         [InlineData("hello world", "hello-world")]
         [InlineData("hello world!!!", "hello-world---")]
         [InlineData("#hello#world3", "-hello-world3")]
@@ -57,7 +55,6 @@ namespace PowerUtils.Text.Tests
         }
 
         [Theory(DisplayName = "Test texts")]
-        [Trait("Extension", "CleanSpecialCharacters")]
         [InlineData("hello world", "helloworld")]
         [InlineData("Hello World!!!", "HelloWorld")]
         [InlineData("#hello#world3", "helloworld3")]

@@ -1,12 +1,12 @@
 ﻿using FluentAssertions;
 using Xunit;
 
-namespace PowerUtils.Text.Tests
+namespace PowerUtils.Text.Tests.TextExtensionsTests
 {
+    [Trait("Extension", "CapitalizeName")]
     public class CapitalizeNameTests
     {
         [Fact(DisplayName = "String null should return null")]
-        [Trait("Extension", "CapitalizeName")]
         public void CompressText_Null_ReturnNull()
         {
             // Arrange
@@ -23,7 +23,6 @@ namespace PowerUtils.Text.Tests
         }
 
         [Fact(DisplayName = "String only empty should return empty")]
-        [Trait("Extension", "CapitalizeName")]
         public void CapitalizeName_Empty_ReturnEmpty()
         {
             // Arrange
@@ -40,7 +39,6 @@ namespace PowerUtils.Text.Tests
         }
 
         [Fact(DisplayName = "String only one character")]
-        [Trait("Extension", "CapitalizeName")]
         public void CapitalizeName_OnlyOneCharacter_ReturnCapitalizedText()
         {
             // Arrange
@@ -57,7 +55,6 @@ namespace PowerUtils.Text.Tests
         }
 
         [Fact(DisplayName = "String one character already capitalized")]
-        [Trait("Extension", "CapitalizeName")]
         public void CapitalizeName_OneCharacterAlreadyCapitalized_ReturnEqualsInput()
         {
             // Arrange
@@ -74,7 +71,6 @@ namespace PowerUtils.Text.Tests
         }
 
         [Fact(DisplayName = "String a space before one character")]
-        [Trait("Extension", "CapitalizeName")]
         public void CapitalizeName_SpaceBaforeOneCharacter_ReturnCapitalizedText()
         {
             // Arrange
@@ -91,7 +87,6 @@ namespace PowerUtils.Text.Tests
         }
 
         [Theory(DisplayName = "Test names")]
-        [Trait("Extension", "CapitalizeName")]
         [InlineData("nelson nobre", "Nelson Nobre")]
         [InlineData("jr.santos", "Jr.Santos")]
         [InlineData("abd al-uzza", "Abd Al-Uzza")]
