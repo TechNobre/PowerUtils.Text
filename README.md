@@ -8,7 +8,7 @@ Helpers, extensions and utilities for manipulating
 
 
 ## Support to
-- .NET 2.0 or more
+- .NET 3.1 or more
 - .NET Framework 4.6.2 or more
 - .NET Standard 2.0 or more
 
@@ -23,9 +23,10 @@ Helpers, extensions and utilities for manipulating
   - [EmptyOrWhiteSpace](#string.EmptyOrWhiteSpace)
   - [CompressText](#string.CompressText)
   - [Truncate](#string.Truncate)
-  - [UppercaseFirst](#string.UppercaseFirst)
   - [CapitalizeName](#string.CapitalizeName)
   - [CleanSpecialCharacters](#string.CleanSpecialCharacters)
+  - [UppercaseFirst](#string.UppercaseFirst)
+  - [LowercaseFirst](#string.LowercaseFirst)
 
 
 
@@ -96,14 +97,6 @@ Truncate text if greater the max length
 var result = "Hello world!!!".Truncate(5);
 ```
 
-#### string.UppercaseFirst(); <a name="string.UppercaseFirst"></a>
-Uppercase the first character
-
-```csharp
-// result = "Hello world!!!"
-var result = "hello world!!!".UppercaseFirst();
-```
-
 #### string.CapitalizeName(); <a name="string.CapitalizeName"></a>
 Capitalize the people amd company names
 
@@ -123,6 +116,22 @@ var result1 = "Hello World!!!".CleanSpecialCharacters();
 var result2 = "Hello World".CleanSpecialCharacters("-");
 ```
 
+#### string.UppercaseFirst(); <a name="string.UppercaseFirst"></a>
+Uppercase the first character
+
+```csharp
+// result = "Hello world!!!"
+var result = "hello world!!!".UppercaseFirst();
+```
+
+#### string.LowercaseFirst(); <a name="string.LowercaseFirst"></a>
+Uppercase the first character
+
+```csharp
+// result = "hello world!!!"
+var result = "Hello world!!!".UppercaseFirst();
+```
+
 
 
 ## Contribution
@@ -138,6 +147,18 @@ var result2 = "Hello World".CleanSpecialCharacters("-");
 
 
 ## Release Notes
+
+
+### v1.2.0 - 2021/11/23
+
+#### New features
+- Added extension `string.LowercaseFirst()`. To lowercase the first character;
+
+#### Enhancements
+- Updated documentation;
+
+#### Updates
+- Added support to .NET6.0;
 
 
 ### v1.1.0 - 2021/07/18

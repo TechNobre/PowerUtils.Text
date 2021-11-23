@@ -1,10 +1,11 @@
 ﻿using FluentAssertions;
+using System;
 using Xunit;
 
 namespace PowerUtils.Text.Tests.TextExtensionsTests
 {
-    [Trait("Extension", "UppercaseFirst")]
-    public class UppercaseFirstTests
+    [Trait("Extension", "LowercaseFirst")]
+    public class LowercaseFirstTests
     {
         [Fact(DisplayName = "String null - Should return null")]
         public void LowercaseFirst_Null_ReturnNull()
@@ -14,7 +15,7 @@ namespace PowerUtils.Text.Tests.TextExtensionsTests
 
 
             // Act
-            var act = input.UppercaseFirst();
+            var act = input.LowercaseFirst();
 
 
             // Assert
@@ -23,14 +24,14 @@ namespace PowerUtils.Text.Tests.TextExtensionsTests
         }
 
         [Fact(DisplayName = "String only empty - Should return empty")]
-        public void UppercaseFirst_Empty_ReturnEmpty()
+        public void LowercaseFirst_Empty_ReturnEmpty()
         {
             // Arrange
             var input = string.Empty;
 
 
             // Act
-            var act = input.UppercaseFirst();
+            var act = input.LowercaseFirst();
 
 
             // Assert
@@ -39,14 +40,14 @@ namespace PowerUtils.Text.Tests.TextExtensionsTests
         }
 
         [Fact(DisplayName = "String with spaces before text")]
-        public void UppercaseFirst_LessMaxLength_ReturnEqualsInput1()
+        public void LowercaseFirst_LessMaxLength_ReturnEqualsInput1()
         {
             // Arrange
             var input = " Hello world!!!";
 
 
             // Act
-            var act = input.UppercaseFirst();
+            var act = input.LowercaseFirst();
 
 
             // Assert
@@ -55,14 +56,14 @@ namespace PowerUtils.Text.Tests.TextExtensionsTests
         }
 
         [Fact(DisplayName = "String with spaces before text")]
-        public void UppercaseFirst_LessMaxLength_ReturnEqualsInput2()
+        public void LowercaseFirst_LessMaxLength_ReturnEqualsInput2()
         {
             // Arrange
             var input = " hello world!!!";
 
 
             // Act
-            var act = input.UppercaseFirst();
+            var act = input.LowercaseFirst();
 
 
             // Assert
@@ -71,35 +72,35 @@ namespace PowerUtils.Text.Tests.TextExtensionsTests
         }
 
         [Fact(DisplayName = "String lowercase")]
-        public void UppercaseFirst_Lowercase_ReturnsupperFirstCharacter()
+        public void LowercaseFirst_Lowercase_ReturnsupperFirstCharacter()
         {
             // Arrange
             var input = "hello world!!!";
 
 
             // Act
-            var act = input.UppercaseFirst();
+            var act = input.LowercaseFirst();
 
 
             // Assert
             act.Should()
-                .Be("Hello world!!!");
+                .Be("hello world!!!");
         }
 
         [Fact(DisplayName = "String lowercase with first character already upper")]
-        public void UppercaseFirst_AlreadyUpper_ReturnsupperFirstCharacter()
+        public void LowercaseFirst_AlreadyUpper_ReturnsupperFirstCharacter()
         {
             // Arrange
             var input = "Hello world!!!";
 
 
             // Act
-            var act = input.UppercaseFirst();
+            var act = input.LowercaseFirst();
 
 
             // Assert
             act.Should()
-                .Be("Hello world!!!");
+                .Be("hello world!!!");
         }
     }
 }
