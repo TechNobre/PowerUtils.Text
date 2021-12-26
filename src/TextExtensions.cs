@@ -10,8 +10,8 @@ namespace PowerUtils.Text
     /// </summary>
     public static class TextExtensions
     {
-        private static char[] CHARS_TO_SPLIT1 = new char[] { ' ', '-', '.', '(' };
-        private static char[] CHARS_TO_SPLIT2 = new char[] { '\'' };
+        private static readonly char[] _charsToSplit1 = new char[] { ' ', '-', '.', '(' };
+        private static readonly char[] _charsToSplit2 = new char[] { '\'' };
 
 
         /// <summary>
@@ -61,11 +61,9 @@ namespace PowerUtils.Text
         /// <param name="input">Input text</param>
         /// <returns>Clear text</returns>
         public static string CleanExtraLineBreakAndLineBreak(this string input)
-        {
-            return input
+            => input
                 .CleanExtraSpaces()
                 .CleanExtraLineBreak();
-        }
 
         /// <summary>
         /// Convert a string with empty or white spaces to null
@@ -102,7 +100,7 @@ namespace PowerUtils.Text
 
                 if (input.Length > maxLength)
                 {
-                    return input.Substring(0, maxLength - 1) + "…";
+                    return $"{input.Substring(0, maxLength - 1)}…";
                 }
                 else
                 {
@@ -145,7 +143,7 @@ namespace PowerUtils.Text
                 return string.Empty;
             }
 
-            char[] splitedText = string
+            var splitedText = string
                 .Join(
                     " ",
                     input.ToLower().Split() // To lower and replace special spaces
@@ -153,18 +151,18 @@ namespace PowerUtils.Text
                 .ToCharArray();
 
             splitedText[0] = char.ToUpper(splitedText[0]); // To Upper first character
-            int length = splitedText.Length;
-            for (int count = 1; count < length; count++)
+            var length = splitedText.Length;
+            for (var count = 1; count < length; count++)
             {
-                if (CHARS_TO_SPLIT1.Contains(splitedText[count - 1]))
+                if (_charsToSplit1.Contains(splitedText[count - 1]))
                 {
                     splitedText[count] = char.ToUpper(splitedText[count]);
                 }
-                else if (count == 1 && CHARS_TO_SPLIT2.Contains(splitedText[count - 1]))
+                else if (count == 1 && _charsToSplit2.Contains(splitedText[count - 1]))
                 {
                     splitedText[count] = char.ToUpper(splitedText[count]);
                 }
-                else if (count > 1 && CHARS_TO_SPLIT2.Contains(splitedText[count - 1]) && (splitedText[count - 2] == ' ' || splitedText[count - 2] == '-'))
+                else if (count > 1 && _charsToSplit2.Contains(splitedText[count - 1]) && (splitedText[count - 2] == ' ' || splitedText[count - 2] == '-'))
                 {
                     splitedText[count] = char.ToUpper(splitedText[count]);
                 }
@@ -186,8 +184,8 @@ namespace PowerUtils.Text
                 return null;
             }
 
-            StringBuilder sb = new StringBuilder();
-            foreach (char character in input)
+            var sb = new StringBuilder();
+            foreach (var character in input)
             {
                 if (
                     (character >= '0' && character <= '9')
@@ -228,7 +226,7 @@ namespace PowerUtils.Text
                 return string.Empty;
             }
 
-            char[] charArray = input.ToCharArray();
+            var charArray = input.ToCharArray();
             charArray[0] = char.ToUpper(charArray[0]);
             return new string(charArray);
         }
