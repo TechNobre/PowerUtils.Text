@@ -1,0 +1,10 @@
+[*.cs]
+
+
+###############################
+# C# Coding Conventions       #
+###############################
+
+
+# Code-block preferences
+csharp_style_namespace_declarations = block_scoped:suggestion # https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/formatting-rules#csharp_style_namespace_declarations
