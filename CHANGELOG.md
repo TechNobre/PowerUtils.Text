@@ -3,6 +3,17 @@
 
 
 
+## [2.0.0] - 2022-02-09
+[Full Changelog](https://github.com/TechNobre/PowerUtils.Text/compare/v1.2.0...v2.0.0)
+
+
+### Breaking Changes
+
+- Discontinued the extension `string.EmptyOrWhiteSpace()`. New method `string.EmptyOrWhiteSpaceToNull()`;
+
+
+
+
 ## [1.2.0] - 2021-11-23
 [Full Changelog](https://github.com/TechNobre/PowerUtils.Text/compare/v1.1.0...v1.2.0)
 

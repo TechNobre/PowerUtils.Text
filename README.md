@@ -138,6 +138,11 @@ var result = "Hello world!!!".UppercaseFirst();
 
 
 
+## :warning: Warning
+Discontinued the extension `string.EmptyOrWhiteSpace()`. New method `string.EmptyOrWhiteSpaceToNull()` will be removed in 2022/08/31.
+
+
+
 ## Contribution
 
 *Help me to help others*

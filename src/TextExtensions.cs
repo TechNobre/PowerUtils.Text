@@ -70,7 +70,7 @@ namespace PowerUtils.Text
         /// </summary>
         /// <param name="input">Input text</param>
         /// <returns>Clear text</returns>
-        public static string EmptyOrWhiteSpace(this string input)
+        public static string EmptyOrWhiteSpaceToNull(this string input)
         {
             if(string.IsNullOrWhiteSpace(input))
             {
@@ -81,6 +81,15 @@ namespace PowerUtils.Text
                 return input;
             }
         }
+
+        /// <summary>
+        /// Convert a string with empty or white spaces to null
+        /// </summary>
+        /// <param name="input">Input text</param>
+        /// <returns>Clear text</returns>
+        [Obsolete("This extension is deprecated. It will be removed on 2022/08/31. Use the new method 'EmptyOrWhiteSpaceToNull'")]
+        public static string EmptyOrWhiteSpace(this string input)
+            => input.EmptyOrWhiteSpaceToNull();
 
         /// <summary>
         /// Compress text if greater the max length

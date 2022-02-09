@@ -1,12 +1,9 @@
-﻿using System;
+﻿namespace PowerUtils.Text.Tests.TextExtensionsTests;
 
-namespace PowerUtils.Text.Tests.TextExtensionsTests;
-
-[Trait("Extension", "EmptyOrWhiteSpace")]
-public class EmptyOrWhiteSpaceTests
+[Trait("Extension", "EmptyOrWhiteSpaceToNull")]
+public class EmptyOrWhiteSpaceToNullTests
 {
     [Fact(DisplayName = "String null should return null")]
-    [Obsolete]
     public void EmptyOrWhiteSpace_Null_ReturnNull()
     {
         // Arrange
@@ -14,7 +11,7 @@ public class EmptyOrWhiteSpaceTests
 
 
         // Act
-        var act = input.EmptyOrWhiteSpace();
+        var act = input.EmptyOrWhiteSpaceToNull();
 
 
         // Assert
@@ -23,7 +20,6 @@ public class EmptyOrWhiteSpaceTests
     }
 
     [Fact(DisplayName = "String only empty should return null")]
-    [Obsolete]
     public void EmptyOrWhiteSpace_Empty_ReturnNull()
     {
         // Arrange
@@ -31,7 +27,7 @@ public class EmptyOrWhiteSpaceTests
 
 
         // Act
-        var act = input.EmptyOrWhiteSpace();
+        var act = input.EmptyOrWhiteSpaceToNull();
 
 
         // Assert
@@ -40,7 +36,6 @@ public class EmptyOrWhiteSpaceTests
     }
 
     [Fact(DisplayName = "String with white spaces should return null")]
-    [Obsolete]
     public void EmptyOrWhiteSpace_WithWhiteSpaces_ReturnNull()
     {
         // Arrange
@@ -48,7 +43,7 @@ public class EmptyOrWhiteSpaceTests
 
 
         // Act
-        var act = input.EmptyOrWhiteSpace();
+        var act = input.EmptyOrWhiteSpaceToNull();
 
 
         // Assert
@@ -57,7 +52,6 @@ public class EmptyOrWhiteSpaceTests
     }
 
     [Fact(DisplayName = "String filled should return the input")]
-    [Obsolete]
     public void EmptyOrWhiteSpace_Filled_ReturnEqualsInput()
     {
         // Arrange
@@ -65,7 +59,7 @@ public class EmptyOrWhiteSpaceTests
 
 
         // Act
-        var act = input.EmptyOrWhiteSpace();
+        var act = input.EmptyOrWhiteSpaceToNull();
 
 
         // Assert
