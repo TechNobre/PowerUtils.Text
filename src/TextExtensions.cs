@@ -138,9 +138,9 @@ namespace PowerUtils.Text
                 return null;
             }
 
-            if(input == string.Empty)
+            if(input == "")
             {
-                return string.Empty;
+                return "";
             }
 
             var splitedText = string
@@ -221,9 +221,9 @@ namespace PowerUtils.Text
                 return null;
             }
 
-            if(input == string.Empty)
+            if(input == "")
             {
-                return string.Empty;
+                return "";
             }
 
             var charArray = input.ToCharArray();
@@ -243,9 +243,9 @@ namespace PowerUtils.Text
                 return null;
             }
 
-            if(input == string.Empty)
+            if(input == "")
             {
-                return string.Empty;
+                return "";
             }
 
             var charArray = input.ToCharArray();

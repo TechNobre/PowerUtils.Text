@@ -25,7 +25,7 @@ public class CleanExtraSpacesTests
     public void CleanExtraSpaces_Empty_ReturnEmpty()
     {
         // Arrange
-        var input = string.Empty;
+        var input = "";
 
 
         // Act

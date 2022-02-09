@@ -23,7 +23,7 @@ public class UppercaseFirstTests
     public void UppercaseFirst_Empty_ReturnEmpty()
     {
         // Arrange
-        var input = string.Empty;
+        var input = "";
 
 
         // Act

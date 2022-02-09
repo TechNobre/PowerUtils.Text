@@ -31,7 +31,7 @@
     <RepositoryUrl>https://github.com/TechNobre/PowerUtils.Text</RepositoryUrl>
     <PackageProjectUrl>https://github.com/TechNobre/PowerUtils.Text</PackageProjectUrl>
     <NeutralLanguage>en-GB</NeutralLanguage>
-        
+
     <PackageOutputPath>bin\</PackageOutputPath>
   </PropertyGroup>
 

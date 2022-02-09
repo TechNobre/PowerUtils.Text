@@ -23,7 +23,7 @@ public class LowercaseFirstTests
     public void LowercaseFirst_Empty_ReturnEmpty()
     {
         // Arrange
-        var input = string.Empty;
+        var input = "";
 
 
         // Act

@@ -23,7 +23,7 @@ public class CleanSpecialCharactersTests
     public void CleanSpecialCharacters_Empty_ReturnEmpty()
     {
         // Arrange
-        var input = string.Empty;
+        var input = "";
 
 
         // Act

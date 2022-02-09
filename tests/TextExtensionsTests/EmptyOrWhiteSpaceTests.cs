@@ -23,7 +23,7 @@ public class EmptyOrWhiteSpaceTests
     public void EmptyOrWhiteSpace_Empty_ReturnNull()
     {
         // Arrange
-        var input = string.Empty;
+        var input = "";
 
 
         // Act

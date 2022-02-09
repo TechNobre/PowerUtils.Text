@@ -25,7 +25,7 @@ public class CleanExtraLineBreakTests
     public void CleanExtraLineBreak_Empty_ReturnEmpty()
     {
         // Arrange
-        var input = string.Empty;
+        var input = "";
 
 
         // Act

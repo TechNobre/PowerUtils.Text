@@ -23,7 +23,7 @@ public class CapitalizeNameTests
     public void CapitalizeName_Empty_ReturnEmpty()
     {
         // Arrange
-        var input = string.Empty;
+        var input = "";
 
 
         // Act
