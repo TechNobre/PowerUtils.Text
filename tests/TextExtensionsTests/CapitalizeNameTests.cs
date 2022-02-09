@@ -87,6 +87,8 @@ public class CapitalizeNameTests
     [InlineData("nelson nobre", "Nelson Nobre")]
     [InlineData("jr.santos", "Jr.Santos")]
     [InlineData("abd al-uzza", "Abd Al-Uzza")]
+    [InlineData("'abd al-rahmān", "'Abd Al-Rahmān")]
+    [InlineData(" 'abd al-rahmān", " 'Abd Al-Rahmān")]
     public void CapitalizeName_Names_ReturnCapitalizedText(string input, string expected)
     {
         // Arrange & Act
