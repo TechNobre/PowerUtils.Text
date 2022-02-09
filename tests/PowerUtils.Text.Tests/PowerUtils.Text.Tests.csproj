@@ -39,7 +39,7 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\src\PowerUtils.Text.csproj" />
+    <ProjectReference Include="..\..\src\PowerUtils.Text.csproj" />
   </ItemGroup>
 
 

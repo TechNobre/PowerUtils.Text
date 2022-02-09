@@ -11,7 +11,7 @@
     <PackageId>PowerUtils.Text</PackageId>
     <title>PowerUtils.Text</title>
     <Product>PowerUtils.Text</Product>
-    <Version>1.2.0</Version>
+    <Version>2.0.0</Version>
 
     <Authors>Nelson Nobre</Authors>
     <Company>TechNobre</Company>
@@ -22,9 +22,9 @@
 
     <Description>Helpers, extensions and utilities for manipulating strings</Description>
     <PackageReleaseNotes>
-      Added extension `string.LowercaseFirst()`. To lowercase the first character;
-      Updated documentation;
-      Added support to .NET6.0;
+      Added extension `string.IsEmail()`;
+      Added extension `string.CombineURL()`;
+      Discontinued the extension `string.EmptyOrWhiteSpace()`. New method `string.EmptyOrWhiteSpaceToNull()`;
     </PackageReleaseNotes>
     <Summary>Helpers, extensions and utilities for manipulating strings</Summary>
     <PackageTags>PowerUtils;Utils;Helpers;Text;Formatting;Extension;Extensions;String</PackageTags>

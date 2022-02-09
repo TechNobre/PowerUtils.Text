@@ -20,7 +20,7 @@ Helpers, extensions and utilities for manipulating
 
 ## Features
 
-- [Extensions](#Extensions)
+- [TextExtensions](#TextExtensions)
   - [CleanExtraSpaces](#string.CleanExtraSpaces)
   - [CleanExtraLineBreak](#string.CleanExtraLineBreak)
   - [CleanExtraLineBreakAndLineBreak](#string.CleanExtraLineBreakAndLineBreak)
@@ -31,6 +31,9 @@ Helpers, extensions and utilities for manipulating
   - [CleanSpecialCharacters](#string.CleanSpecialCharacters)
   - [UppercaseFirst](#string.UppercaseFirst)
   - [LowercaseFirst](#string.LowercaseFirst)
+- [NetworkExtensions](#NetworkExtensions)
+  - [IsEmail](#string.IsEmail)
+  - [CombineURL](#string.CombineURL)
 
 
 
@@ -51,7 +54,9 @@ Install-Package PowerUtils.Text
 dotnet add package PowerUtils.Text
 ```
 
-### Extensions <a name="Extensions"></a>
+
+
+### TextExtensions <a name="TextExtensions"></a>
 
 #### string.CleanExtraSpaces(); <a name="string.CleanExtraSpaces"></a>
 Clean extra spaces. Replace tabs to one space and double spaces to one space
@@ -134,6 +139,26 @@ Uppercase the first character
 ```csharp
 // result = "hello world!!!"
 var result = "Hello world!!!".UppercaseFirst();
+```
+
+
+
+### TextExtensions <a name="TextExtensions"></a>
+
+#### string.IsEmail(); <a name="string.IsEmail"></a>
+Check if the input is an email
+
+```csharp
+// result = true
+var result = "nelson@fake.com".IsEmail();
+```
+
+#### string.CombineURL(); <a name="string.CombineURL"></a>
+Check if the input is an email
+
+```csharp
+// result = http://localhost:8080/clients/photos
+var result = "http://localhost:8080".CombineURL("clients", "photos");
 ```
 
 

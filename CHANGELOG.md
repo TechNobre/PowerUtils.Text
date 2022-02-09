@@ -7,6 +7,12 @@
 [Full Changelog](https://github.com/TechNobre/PowerUtils.Text/compare/v1.2.0...v2.0.0)
 
 
+### New Features
+
+- Added extension `string.IsEmail()`;
+- Added extension `string.CombineURL()`;
+
+
 ### Breaking Changes
 
 - Discontinued the extension `string.EmptyOrWhiteSpace()`. New method `string.EmptyOrWhiteSpaceToNull()`;
