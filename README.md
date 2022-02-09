@@ -1,9 +1,13 @@
 # PowerUtils.Text
 Helpers, extensions and utilities for manipulating
 
-![CI](https://github.com/TechNobre/PowerUtils.Text/actions/workflows/main.yml/badge.svg)
+![Tests](https://github.com/TechNobre/PowerUtils.Text/actions/workflows/test-project.yml/badge.svg)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=TechNobre_PowerUtils.Text&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=TechNobre_PowerUtils.Text)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=TechNobre_PowerUtils.Text&metric=coverage)](https://sonarcloud.io/summary/new_code?id=TechNobre_PowerUtils.Text)
+
 [![NuGet](https://img.shields.io/nuget/v/PowerUtils.Text.svg)](https://www.nuget.org/packages/PowerUtils.Text)
 [![Nuget](https://img.shields.io/nuget/dt/PowerUtils.Text.svg)](https://www.nuget.org/packages/PowerUtils.Text)
+[![License: MIT](https://img.shields.io/github/license/ofpinewood/http-exceptions.svg)](https://github.com/TechNobre/PowerUtils.Text/blob/main/LICENSE)
 
 
 
@@ -146,30 +150,6 @@ var result = "Hello world!!!".UppercaseFirst();
 
 
 
-## Release Notes
+## Changelog
 
-
-### v1.2.0 - 2021/11/23
-
-#### New features
-- Added extension `string.LowercaseFirst()`. To lowercase the first character;
-
-#### Enhancements
-- Updated documentation;
-
-#### Updates
-- Added support to .NET6.0;
-
-
-### v1.1.0 - 2021/07/18
-
-#### New features
-- Added extension `string.UppercaseFirst()`. To uppercase the first character;
-- Added extension `string.CapitalizeName()`. To capitalize the people and company names;
-- Added extension `string.CleanSpecialCharacters()`. To replace all special characters in a string for other character;
-
-
-
-### v1.0.0 - 2021/07/18
-
-- Kick start project
+[Here](./CHANGELOG.md)
