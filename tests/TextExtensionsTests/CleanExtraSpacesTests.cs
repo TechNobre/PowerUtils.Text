@@ -1,6 +1,4 @@
 ﻿using System;
-using FluentAssertions;
-using Xunit;
 
 namespace PowerUtils.Text.Tests.TextExtensionsTests;
 

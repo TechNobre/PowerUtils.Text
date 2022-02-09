@@ -1,7 +1,4 @@
-﻿using FluentAssertions;
-using Xunit;
-
-namespace PowerUtils.Text.Tests.TextExtensionsTests;
+﻿namespace PowerUtils.Text.Tests.TextExtensionsTests;
 
 [Trait("Extension", "Truncate")]
 public class TruncateTests

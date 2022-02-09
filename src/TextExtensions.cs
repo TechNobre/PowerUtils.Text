@@ -21,7 +21,7 @@ namespace PowerUtils.Text
         /// <returns>Clear string</returns>
         public static string CleanExtraSpaces(this string input)
         {
-            if (input == null)
+            if(input == null)
             {
                 return null;
             }
@@ -43,7 +43,7 @@ namespace PowerUtils.Text
         /// <returns>Clear text</returns>
         public static string CleanExtraLineBreak(this string input)
         {
-            if (input == null)
+            if(input == null)
             {
                 return null;
             }
@@ -72,7 +72,7 @@ namespace PowerUtils.Text
         /// <returns>Clear text</returns>
         public static string EmptyOrWhiteSpace(this string input)
         {
-            if (string.IsNullOrWhiteSpace(input))
+            if(string.IsNullOrWhiteSpace(input))
             {
                 return null;
             }
@@ -90,7 +90,7 @@ namespace PowerUtils.Text
         /// <returns>Compressed text</returns>
         public static string CompressText(this string input, int maxLength)
         {
-            if (input == null)
+            if(input == null)
             {
                 return null;
             }
@@ -98,7 +98,7 @@ namespace PowerUtils.Text
             {
                 input = input.TrimEnd();
 
-                if (input.Length > maxLength)
+                if(input.Length > maxLength)
                 {
                     return $"{input.Substring(0, maxLength - 1)}…";
                 }
@@ -117,7 +117,7 @@ namespace PowerUtils.Text
         /// <returns>Compressed text</returns>
         public static string Truncate(this string input, int maxLength)
         {
-            if (input == null)
+            if(input == null)
             {
                 return null;
             }
@@ -133,12 +133,12 @@ namespace PowerUtils.Text
         /// <returns>Capitalized name</returns>
         public static string CapitalizeName(this string input)
         {
-            if (input == null)
+            if(input == null)
             {
                 return null;
             }
 
-            if (input == string.Empty)
+            if(input == string.Empty)
             {
                 return string.Empty;
             }
@@ -152,17 +152,17 @@ namespace PowerUtils.Text
 
             splitedText[0] = char.ToUpper(splitedText[0]); // To Upper first character
             var length = splitedText.Length;
-            for (var count = 1; count < length; count++)
+            for(var count = 1; count < length; count++)
             {
-                if (_charsToSplit1.Contains(splitedText[count - 1]))
+                if(_charsToSplit1.Contains(splitedText[count - 1]))
                 {
                     splitedText[count] = char.ToUpper(splitedText[count]);
                 }
-                else if (count == 1 && _charsToSplit2.Contains(splitedText[count - 1]))
+                else if(count == 1 && _charsToSplit2.Contains(splitedText[count - 1]))
                 {
                     splitedText[count] = char.ToUpper(splitedText[count]);
                 }
-                else if (count > 1 && _charsToSplit2.Contains(splitedText[count - 1]) && (splitedText[count - 2] == ' ' || splitedText[count - 2] == '-'))
+                else if(count > 1 && _charsToSplit2.Contains(splitedText[count - 1]) && (splitedText[count - 2] == ' ' || splitedText[count - 2] == '-'))
                 {
                     splitedText[count] = char.ToUpper(splitedText[count]);
                 }
@@ -179,15 +179,15 @@ namespace PowerUtils.Text
         /// <returns>New string clean</returns>
         public static string CleanSpecialCharacters(this string input, string substitute = "")
         {
-            if (input == null)
+            if(input == null)
             {
                 return null;
             }
 
             var sb = new StringBuilder();
-            foreach (var character in input)
+            foreach(var character in input)
             {
-                if (
+                if(
                     (character >= '0' && character <= '9')
                     ||
                     (character >= 'A' && character <= 'Z')
@@ -216,12 +216,12 @@ namespace PowerUtils.Text
         /// <returns>New string</returns>
         public static string UppercaseFirst(this string input)
         {
-            if (input == null)
+            if(input == null)
             {
                 return null;
             }
 
-            if (input == string.Empty)
+            if(input == string.Empty)
             {
                 return string.Empty;
             }
@@ -238,12 +238,12 @@ namespace PowerUtils.Text
         /// <returns>Text transformed</returns>
         public static string LowercaseFirst(this string input)
         {
-            if (input == null)
+            if(input == null)
             {
                 return null;
             }
 
-            if (input == string.Empty)
+            if(input == string.Empty)
             {
                 return string.Empty;
             }
