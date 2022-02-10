@@ -34,7 +34,7 @@ Helpers, extensions and utilities for manipulating
 - [NetworkExtensions](#NetworkExtensions)
   - [IsEmail](#string.IsEmail)
   - [CombineURL](#string.CombineURL)
-  - [ToQueryString](#object.ToQueryString())
+  - [ToQueryString](#object.ToQueryString)
 
 
 
