@@ -34,6 +34,7 @@ Helpers, extensions and utilities for manipulating
 - [NetworkExtensions](#NetworkExtensions)
   - [IsEmail](#string.IsEmail)
   - [CombineURL](#string.CombineURL)
+  - [ToQueryString](#object.ToQueryString())
 
 
 
@@ -159,6 +160,22 @@ Check if the input is an email
 ```csharp
 // result = http://localhost:8080/clients/photos
 var result = "http://localhost:8080".CombineURL("clients", "photos");
+```
+
+#### object.ToQueryString(); <a name="object.ToQueryString"></a>
+Convert an object to a QueryString. 
+> (Does not supported in .NET Framework 4.6.2 and .NET Framework 4.8)
+
+```csharp
+object parameters = new
+{
+    Name = "Nelson",
+    Age = 12,
+    IsValide = true
+};
+
+// result = ?Name=Nelson&Age=12&IsValide=True
+var result = parameters.ToQueryString();
 ```
 
 

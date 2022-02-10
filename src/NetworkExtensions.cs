@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Web;
 
 namespace PowerUtils.Text
 {
@@ -71,5 +73,51 @@ namespace PowerUtils.Text
 
             return paths.ToString().TrimEnd(URL_SEPARATOR);
         }
+
+#if !(NET462 || NET48)
+        /// <summary>
+        /// Convert an object to a QueryString
+        /// </summary>
+        /// <param name="parameters">Object with parameters</param>
+        /// <returns>QueryString</returns>
+        /// <exception cref="ArgumentNullException">When the <paramref name="parameters">parameters</paramref> is null</exception>
+        /// <exception cref="NotSupportedException">When the <paramref name="parameters">parameters</paramref> is of the type not supported</exception>
+        public static string ToQueryString<T>(this T parameters) where T : new()
+        {
+            if(parameters == null)
+            {
+                throw new ArgumentNullException(nameof(parameters), "The parameters cannot be null");
+            }
+
+            var type = parameters.GetType();
+            if( // Not supported types
+                type != typeof(short) &&
+                type != typeof(ushort) &&
+                type != typeof(int) &&
+                type != typeof(uint) &&
+                type != typeof(long) &&
+                type != typeof(ulong) &&
+                type != typeof(float) &&
+                type != typeof(double) &&
+                type != typeof(decimal)
+            )
+            {
+                var properties = parameters
+                    .GetType().GetProperties()
+                    .Where(w => w.GetValue(parameters, null) != null)
+                    .Select(s => $"{s.Name}={HttpUtility.UrlEncode(s.GetValue(parameters, null).ToString())}");
+
+                if(!properties.Any())
+                {
+                    return "";
+                }
+
+                return $"?{string.Join("&", properties)}";
+            }
+
+
+            throw new NotSupportedException($"The type {type.Name} is not supported");
+        }
+#endif
     }
 }

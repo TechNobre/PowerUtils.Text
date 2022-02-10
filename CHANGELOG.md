@@ -3,7 +3,7 @@
 
 
 
-## [2.0.0] - 2022-02-09
+## [2.0.0] - 2022-02-10
 [Full Changelog](https://github.com/TechNobre/PowerUtils.Text/compare/v1.2.0...v2.0.0)
 
 
@@ -11,6 +11,7 @@
 
 - Added extension `string.IsEmail()`;
 - Added extension `string.CombineURL()`;
+- Added extension `object.ToQueryString()`;
 
 
 ### Breaking Changes

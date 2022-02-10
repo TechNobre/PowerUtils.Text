@@ -106,6 +106,7 @@ public class CombineURLTests
     [Theory(DisplayName = "Combine root URL with 1 segment")]
     [InlineData("fake", null, "fake")]
     [InlineData("www.fake.com", "fake", "www.fake.com/fake")]
+    [InlineData("www.fake.com", "fake1/fake2/fake3", "www.fake.com/fake1/fake2/fake3")]
     [InlineData("https://www.fake.com", "fake", "https://www.fake.com/fake")]
     [InlineData("https://fake.com", "fake", "https://fake.com/fake")]
     public void URLCombine_With1Segments_CombinedURL(string url, string segment, string expected)

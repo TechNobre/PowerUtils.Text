@@ -24,6 +24,7 @@
     <PackageReleaseNotes>
       Added extension `string.IsEmail()`;
       Added extension `string.CombineURL()`;
+      Added extension `object.ToQueryString()`;
       Discontinued the extension `string.EmptyOrWhiteSpace()`. New method `string.EmptyOrWhiteSpaceToNull()`;
     </PackageReleaseNotes>
     <Summary>Helpers, extensions and utilities for manipulating strings</Summary>
