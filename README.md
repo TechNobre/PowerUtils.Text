@@ -1,9 +1,13 @@
 # PowerUtils.Text
 Helpers, extensions and utilities for manipulating
 
-![CI](https://github.com/TechNobre/PowerUtils.Text/actions/workflows/main.yml/badge.svg)
+![Tests](https://github.com/TechNobre/PowerUtils.Text/actions/workflows/test-project.yml/badge.svg)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=TechNobre_PowerUtils.Text&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=TechNobre_PowerUtils.Text)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=TechNobre_PowerUtils.Text&metric=coverage)](https://sonarcloud.io/summary/new_code?id=TechNobre_PowerUtils.Text)
+
 [![NuGet](https://img.shields.io/nuget/v/PowerUtils.Text.svg)](https://www.nuget.org/packages/PowerUtils.Text)
 [![Nuget](https://img.shields.io/nuget/dt/PowerUtils.Text.svg)](https://www.nuget.org/packages/PowerUtils.Text)
+[![License: MIT](https://img.shields.io/github/license/ofpinewood/http-exceptions.svg)](https://github.com/TechNobre/PowerUtils.Text/blob/main/LICENSE)
 
 
 
@@ -16,7 +20,7 @@ Helpers, extensions and utilities for manipulating
 
 ## Features
 
-- [Extensions](#Extensions)
+- [TextExtensions](#TextExtensions)
   - [CleanExtraSpaces](#string.CleanExtraSpaces)
   - [CleanExtraLineBreak](#string.CleanExtraLineBreak)
   - [CleanExtraLineBreakAndLineBreak](#string.CleanExtraLineBreakAndLineBreak)
@@ -27,6 +31,10 @@ Helpers, extensions and utilities for manipulating
   - [CleanSpecialCharacters](#string.CleanSpecialCharacters)
   - [UppercaseFirst](#string.UppercaseFirst)
   - [LowercaseFirst](#string.LowercaseFirst)
+- [NetworkExtensions](#NetworkExtensions)
+  - [IsEmail](#string.IsEmail)
+  - [CombineURL](#string.CombineURL)
+  - [ToQueryString](#object.ToQueryString)
 
 
 
@@ -47,7 +55,9 @@ Install-Package PowerUtils.Text
 dotnet add package PowerUtils.Text
 ```
 
-### Extensions <a name="Extensions"></a>
+
+
+### TextExtensions <a name="TextExtensions"></a>
 
 #### string.CleanExtraSpaces(); <a name="string.CleanExtraSpaces"></a>
 Clean extra spaces. Replace tabs to one space and double spaces to one space
@@ -134,6 +144,47 @@ var result = "Hello world!!!".UppercaseFirst();
 
 
 
+### TextExtensions <a name="TextExtensions"></a>
+
+#### string.IsEmail(); <a name="string.IsEmail"></a>
+Check if the input is an email
+
+```csharp
+// result = true
+var result = "nelson@fake.com".IsEmail();
+```
+
+#### string.CombineURL(); <a name="string.CombineURL"></a>
+Check if the input is an email
+
+```csharp
+// result = http://localhost:8080/clients/photos
+var result = "http://localhost:8080".CombineURL("clients", "photos");
+```
+
+#### object.ToQueryString(); <a name="object.ToQueryString"></a>
+Convert an object to a QueryString. 
+> (Does not supported in .NET Framework 4.6.2 and .NET Framework 4.8)
+
+```csharp
+object parameters = new
+{
+    Name = "Nelson",
+    Age = 12,
+    IsValide = true
+};
+
+// result = ?Name=Nelson&Age=12&IsValide=True
+var result = parameters.ToQueryString();
+```
+
+
+
+## :warning: Warning
+Discontinued the extension `string.EmptyOrWhiteSpace()`. New method `string.EmptyOrWhiteSpaceToNull()` will be removed in 2022/08/31.
+
+
+
 ## Contribution
 
 *Help me to help others*
@@ -146,30 +197,6 @@ var result = "Hello world!!!".UppercaseFirst();
 
 
 
-## Release Notes
+## Changelog
 
-
-### v1.2.0 - 2021/11/23
-
-#### New features
-- Added extension `string.LowercaseFirst()`. To lowercase the first character;
-
-#### Enhancements
-- Updated documentation;
-
-#### Updates
-- Added support to .NET6.0;
-
-
-### v1.1.0 - 2021/07/18
-
-#### New features
-- Added extension `string.UppercaseFirst()`. To uppercase the first character;
-- Added extension `string.CapitalizeName()`. To capitalize the people and company names;
-- Added extension `string.CleanSpecialCharacters()`. To replace all special characters in a string for other character;
-
-
-
-### v1.0.0 - 2021/07/18
-
-- Kick start project
+[Here](./CHANGELOG.md)

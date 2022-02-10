@@ -1,0 +1,13 @@
+﻿[*.cs]
+
+
+###############################
+# Hide dotnet messages        #
+###############################
+
+
+# CA1041: Provide ObsoleteAttribute message - https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1041
+dotnet_diagnostic.CA1041.severity = none
+
+# IDE0007: Use implicit type
+dotnet_diagnostic.IDE0007.severity = none

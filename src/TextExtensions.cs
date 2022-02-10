@@ -10,8 +10,8 @@ namespace PowerUtils.Text
     /// </summary>
     public static class TextExtensions
     {
-        private static char[] CHARS_TO_SPLIT1 = new char[] { ' ', '-', '.', '(' };
-        private static char[] CHARS_TO_SPLIT2 = new char[] { '\'' };
+        private static readonly char[] _charsToSplit1 = new char[] { ' ', '-', '.', '(' };
+        private static readonly char[] _charsToSplit2 = new char[] { '\'' };
 
 
         /// <summary>
@@ -21,7 +21,7 @@ namespace PowerUtils.Text
         /// <returns>Clear string</returns>
         public static string CleanExtraSpaces(this string input)
         {
-            if (input == null)
+            if(input == null)
             {
                 return null;
             }
@@ -43,7 +43,7 @@ namespace PowerUtils.Text
         /// <returns>Clear text</returns>
         public static string CleanExtraLineBreak(this string input)
         {
-            if (input == null)
+            if(input == null)
             {
                 return null;
             }
@@ -61,20 +61,18 @@ namespace PowerUtils.Text
         /// <param name="input">Input text</param>
         /// <returns>Clear text</returns>
         public static string CleanExtraLineBreakAndLineBreak(this string input)
-        {
-            return input
+            => input
                 .CleanExtraSpaces()
                 .CleanExtraLineBreak();
-        }
 
         /// <summary>
         /// Convert a string with empty or white spaces to null
         /// </summary>
         /// <param name="input">Input text</param>
         /// <returns>Clear text</returns>
-        public static string EmptyOrWhiteSpace(this string input)
+        public static string EmptyOrWhiteSpaceToNull(this string input)
         {
-            if (string.IsNullOrWhiteSpace(input))
+            if(string.IsNullOrWhiteSpace(input))
             {
                 return null;
             }
@@ -85,6 +83,15 @@ namespace PowerUtils.Text
         }
 
         /// <summary>
+        /// Convert a string with empty or white spaces to null
+        /// </summary>
+        /// <param name="input">Input text</param>
+        /// <returns>Clear text</returns>
+        [Obsolete("This extension is deprecated. It will be removed on 2022/08/31. Use the new method 'EmptyOrWhiteSpaceToNull'")]
+        public static string EmptyOrWhiteSpace(this string input)
+            => input.EmptyOrWhiteSpaceToNull();
+
+        /// <summary>
         /// Compress text if greater the max length
         /// </summary>
         /// <param name="input">Text to be checked</param>
@@ -92,7 +99,7 @@ namespace PowerUtils.Text
         /// <returns>Compressed text</returns>
         public static string CompressText(this string input, int maxLength)
         {
-            if (input == null)
+            if(input == null)
             {
                 return null;
             }
@@ -100,9 +107,9 @@ namespace PowerUtils.Text
             {
                 input = input.TrimEnd();
 
-                if (input.Length > maxLength)
+                if(input.Length > maxLength)
                 {
-                    return input.Substring(0, maxLength - 1) + "…";
+                    return $"{input.Substring(0, maxLength - 1)}…";
                 }
                 else
                 {
@@ -119,7 +126,7 @@ namespace PowerUtils.Text
         /// <returns>Compressed text</returns>
         public static string Truncate(this string input, int maxLength)
         {
-            if (input == null)
+            if(input == null)
             {
                 return null;
             }
@@ -135,17 +142,17 @@ namespace PowerUtils.Text
         /// <returns>Capitalized name</returns>
         public static string CapitalizeName(this string input)
         {
-            if (input == null)
+            if(input == null)
             {
                 return null;
             }
 
-            if (input == string.Empty)
+            if(input == "")
             {
-                return string.Empty;
+                return "";
             }
 
-            char[] splitedText = string
+            var splitedText = string
                 .Join(
                     " ",
                     input.ToLower().Split() // To lower and replace special spaces
@@ -153,18 +160,18 @@ namespace PowerUtils.Text
                 .ToCharArray();
 
             splitedText[0] = char.ToUpper(splitedText[0]); // To Upper first character
-            int length = splitedText.Length;
-            for (int count = 1; count < length; count++)
+            var length = splitedText.Length;
+            for(var count = 1; count < length; count++)
             {
-                if (CHARS_TO_SPLIT1.Contains(splitedText[count - 1]))
+                if(_charsToSplit1.Contains(splitedText[count - 1]))
                 {
                     splitedText[count] = char.ToUpper(splitedText[count]);
                 }
-                else if (count == 1 && CHARS_TO_SPLIT2.Contains(splitedText[count - 1]))
+                else if(count == 1 && _charsToSplit2.Contains(splitedText[count - 1]))
                 {
                     splitedText[count] = char.ToUpper(splitedText[count]);
                 }
-                else if (count > 1 && CHARS_TO_SPLIT2.Contains(splitedText[count - 1]) && (splitedText[count - 2] == ' ' || splitedText[count - 2] == '-'))
+                else if(count > 1 && _charsToSplit2.Contains(splitedText[count - 1]) && (splitedText[count - 2] == ' ' || splitedText[count - 2] == '-'))
                 {
                     splitedText[count] = char.ToUpper(splitedText[count]);
                 }
@@ -181,15 +188,15 @@ namespace PowerUtils.Text
         /// <returns>New string clean</returns>
         public static string CleanSpecialCharacters(this string input, string substitute = "")
         {
-            if (input == null)
+            if(input == null)
             {
                 return null;
             }
 
-            StringBuilder sb = new StringBuilder();
-            foreach (char character in input)
+            var sb = new StringBuilder();
+            foreach(var character in input)
             {
-                if (
+                if(
                     (character >= '0' && character <= '9')
                     ||
                     (character >= 'A' && character <= 'Z')
@@ -218,17 +225,17 @@ namespace PowerUtils.Text
         /// <returns>New string</returns>
         public static string UppercaseFirst(this string input)
         {
-            if (input == null)
+            if(input == null)
             {
                 return null;
             }
 
-            if (input == string.Empty)
+            if(input == "")
             {
-                return string.Empty;
+                return "";
             }
 
-            char[] charArray = input.ToCharArray();
+            var charArray = input.ToCharArray();
             charArray[0] = char.ToUpper(charArray[0]);
             return new string(charArray);
         }
@@ -240,14 +247,14 @@ namespace PowerUtils.Text
         /// <returns>Text transformed</returns>
         public static string LowercaseFirst(this string input)
         {
-            if (input == null)
+            if(input == null)
             {
                 return null;
             }
 
-            if (input == string.Empty)
+            if(input == "")
             {
-                return string.Empty;
+                return "";
             }
 
             var charArray = input.ToCharArray();
