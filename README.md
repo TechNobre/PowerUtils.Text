@@ -31,6 +31,7 @@ Helpers, extensions and utilities for manipulating
   - [CleanSpecialCharacters](#string.CleanSpecialCharacters)
   - [UppercaseFirst](#string.UppercaseFirst)
   - [LowercaseFirst](#string.LowercaseFirst)
+  - [ToSnakeCase](#string.ToSnakeCase)
 - [NetworkExtensions](#NetworkExtensions)
   - [IsEmail](#string.IsEmail)
   - [CombineURL](#string.CombineURL)
@@ -140,6 +141,14 @@ Uppercase the first character
 ```csharp
 // result = "hello world!!!"
 var result = "Hello world!!!".UppercaseFirst();
+```
+
+#### string.ToSnakeCase(); <a name="string.ToSnakeCase"></a>
+Convert a text to snake case format
+
+```csharp
+// result = "test_snake_case"
+var result = "TestSnakeCase".ToSnakeCase();
 ```
 
 
