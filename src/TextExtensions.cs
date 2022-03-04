@@ -143,14 +143,9 @@ namespace PowerUtils.Text
         /// <returns>Capitalized name</returns>
         public static string CapitalizeName(this string input)
         {
-            if(input == null)
+            if(string.IsNullOrEmpty(input))
             {
-                return null;
-            }
-
-            if(input == "")
-            {
-                return "";
+                return input;
             }
 
             var splitedText = string
@@ -226,14 +221,9 @@ namespace PowerUtils.Text
         /// <returns>New string</returns>
         public static string UppercaseFirst(this string input)
         {
-            if(input == null)
+            if(string.IsNullOrEmpty(input))
             {
-                return null;
-            }
-
-            if(input == "")
-            {
-                return "";
+                return input;
             }
 
             var charArray = input.ToCharArray();
@@ -248,14 +238,9 @@ namespace PowerUtils.Text
         /// <returns>Text transformed</returns>
         public static string LowercaseFirst(this string input)
         {
-            if(input == null)
+            if(string.IsNullOrEmpty(input))
             {
-                return null;
-            }
-
-            if(input == "")
-            {
-                return "";
+                return input;
             }
 
             var charArray = input.ToCharArray();

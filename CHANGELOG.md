@@ -12,6 +12,11 @@
 - Added extension `string.ToSnakeCase()`;
 
 
+#### Enhancements
+
+- Simplified code;
+
+
 
 
 ## [2.0.0] - 2022-02-10
