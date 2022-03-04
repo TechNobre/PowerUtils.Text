@@ -14,21 +14,18 @@
     <PackageId>PowerUtils.Text</PackageId>
     <title>PowerUtils.Text</title>
     <Product>PowerUtils.Text</Product>
-    <Version>2.0.0</Version>
+    <Version>2.1.0</Version>
 
     <Authors>Nelson Nobre</Authors>
     <Company>TechNobre</Company>
 
     <License>MIT</License>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <Copyright>Copyright © 2018 by TechNobre</Copyright>
+    <Copyright>Copyright © 2022 by TechNobre</Copyright>
 
     <Description>Helpers, extensions and utilities for manipulating strings</Description>
     <PackageReleaseNotes>
-      Added extension `string.IsEmail()`;
-      Added extension `string.CombineURL()`;
-      Added extension `object.ToQueryString()`;
-      Discontinued the extension `string.EmptyOrWhiteSpace()`. New method `string.EmptyOrWhiteSpaceToNull()`;
+      Added extension `string.ToSnakeCase()`;
     </PackageReleaseNotes>
     <Summary>Helpers, extensions and utilities for manipulating strings</Summary>
     <PackageTags>PowerUtils;Utils;Helpers;Text;Formatting;Extension;Extensions;String</PackageTags>

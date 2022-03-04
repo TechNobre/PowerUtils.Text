@@ -3,6 +3,22 @@
 
 
 
+## [2.1.0] - 2022-03-04
+[Full Changelog](https://github.com/TechNobre/PowerUtils.Text/compare/v2.0.0...v2.1.0)
+
+
+### New Features
+
+- Added extension `string.ToSnakeCase()`;
+
+
+#### Enhancements
+
+- Simplified code;
+
+
+
+
 ## [2.0.0] - 2022-02-10
 [Full Changelog](https://github.com/TechNobre/PowerUtils.Text/compare/v1.2.0...v2.0.0)
 

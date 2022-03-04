@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -142,14 +143,9 @@ namespace PowerUtils.Text
         /// <returns>Capitalized name</returns>
         public static string CapitalizeName(this string input)
         {
-            if(input == null)
+            if(string.IsNullOrEmpty(input))
             {
-                return null;
-            }
-
-            if(input == "")
-            {
-                return "";
+                return input;
             }
 
             var splitedText = string
@@ -225,14 +221,9 @@ namespace PowerUtils.Text
         /// <returns>New string</returns>
         public static string UppercaseFirst(this string input)
         {
-            if(input == null)
+            if(string.IsNullOrEmpty(input))
             {
-                return null;
-            }
-
-            if(input == "")
-            {
-                return "";
+                return input;
             }
 
             var charArray = input.ToCharArray();
@@ -247,19 +238,92 @@ namespace PowerUtils.Text
         /// <returns>Text transformed</returns>
         public static string LowercaseFirst(this string input)
         {
-            if(input == null)
+            if(string.IsNullOrEmpty(input))
             {
-                return null;
-            }
-
-            if(input == "")
-            {
-                return "";
+                return input;
             }
 
             var charArray = input.ToCharArray();
             charArray[0] = char.ToLower(charArray[0]);
             return new string(charArray);
+        }
+
+        /// <summary>
+        /// Convert a text to snake case format
+        /// </summary>
+        /// <param name="input">Text to be transformed</param>
+        /// <returns>Text transformed</returns>
+        public static string ToSnakeCase(this string input)
+        { // Reference1: https://stackoverflow.com/questions/63055621/how-to-convert-camel-case-to-snake-case-with-two-capitals-next-to-each-other
+          // Reference1: https://github.com/efcore/EFCore.NamingConventions/blob/main/EFCore.NamingConventions/Internal/SnakeCaseNameRewriter.cs
+            if(string.IsNullOrEmpty(input))
+            {
+                return input;
+            }
+
+            var builder = new StringBuilder(input.Length + Math.Min(2, input.Length / 5));
+            var previousCategory = default(UnicodeCategory?);
+
+            for(var currentIndex = 0; currentIndex < input.Length; currentIndex++)
+            {
+                var currentChar = input[currentIndex];
+                if(currentChar == '_')
+                {
+                    builder.Append('_');
+                    previousCategory = null;
+                    continue;
+                }
+
+                var currentCategory = char.GetUnicodeCategory(currentChar);
+                switch(currentCategory)
+                {
+                    case UnicodeCategory.UppercaseLetter:
+                    case UnicodeCategory.TitlecaseLetter:
+                        _snakeCaseHandleUppercaseLetterAndTitlecaseLetter(
+                            input,
+                            currentIndex,
+                            previousCategory,
+                            builder
+                        );
+
+                        currentChar = char.ToLower(currentChar, CultureInfo.InvariantCulture);
+                        break;
+
+                    case UnicodeCategory.LowercaseLetter:
+                    case UnicodeCategory.DecimalDigitNumber:
+                        if(previousCategory == UnicodeCategory.SpaceSeparator)
+                        {
+                            builder.Append('_');
+                        }
+                        break;
+
+                    default:
+                        if(previousCategory != null)
+                        {
+                            previousCategory = UnicodeCategory.SpaceSeparator;
+                        }
+                        continue;
+                }
+
+                builder.Append(currentChar);
+                previousCategory = currentCategory;
+            }
+
+            return builder.ToString();
+        }
+
+        private static void _snakeCaseHandleUppercaseLetterAndTitlecaseLetter(string input, int currentIndex, UnicodeCategory? previousCategory, StringBuilder builder)
+        {
+            if(previousCategory == UnicodeCategory.SpaceSeparator ||
+                previousCategory == UnicodeCategory.LowercaseLetter ||
+                (previousCategory != UnicodeCategory.DecimalDigitNumber &&
+                previousCategory != null &&
+                currentIndex > 0 &&
+                currentIndex + 1 < input.Length &&
+                char.IsLower(input[currentIndex + 1])))
+            {
+                builder.Append('_');
+            }
         }
     }
 }
