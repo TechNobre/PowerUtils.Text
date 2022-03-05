@@ -12,7 +12,7 @@
 - Added extension `string.ToSnakeCase()`;
 
 
-#### Enhancements
+### Enhancements
 
 - Simplified code;
 
