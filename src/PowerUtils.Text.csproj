@@ -1,5 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <!-- Assembly details -->
   <PropertyGroup>
     <ProjectGuid>4b8f1c43-97b4-48fe-b280-7620c63f4be6</ProjectGuid>
 
@@ -7,33 +8,40 @@
     <!-- Assembly and projecto details -->
     <!-- https://docs.microsoft.com/en-us/dotnet/standard/frameworks -->
     <TargetFrameworks>net6.0;net5.0;netstandard2.0;netstandard2.1;net462;net48;netcoreapp3.1</TargetFrameworks>
+
+
     <AssemblyName>PowerUtils.Text</AssemblyName>
     <RootNamespace>PowerUtils.Text</RootNamespace>
+    
+    <Version>2.1.0</Version>
 
-    <!-- Package details -->
+    <PackageOutputPath>bin\</PackageOutputPath>
+  </PropertyGroup>
+
+
+  <!-- Package details -->
+  <PropertyGroup>
+    <CurrentYear>$([System.DateTime]::UtcNow.ToString(yyyy))</CurrentYear>
+
     <PackageId>PowerUtils.Text</PackageId>
     <title>PowerUtils.Text</title>
     <Product>PowerUtils.Text</Product>
-    <Version>2.1.0</Version>
 
     <Authors>Nelson Nobre</Authors>
     <Company>TechNobre</Company>
 
     <License>MIT</License>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <Copyright>Copyright © 2022 by TechNobre</Copyright>
+    <Copyright>Copyright © $(CurrentYear) by TechNobre</Copyright>
 
     <Description>Helpers, extensions and utilities for manipulating strings</Description>
-    <PackageReleaseNotes>
-      Added extension `string.ToSnakeCase()`;
-    </PackageReleaseNotes>
     <Summary>Helpers, extensions and utilities for manipulating strings</Summary>
     <PackageTags>PowerUtils;Utils;Helpers;Text;Formatting;Extension;Extensions;String</PackageTags>
-    <RepositoryUrl>https://github.com/TechNobre/PowerUtils.Text</RepositoryUrl>
     <PackageProjectUrl>https://github.com/TechNobre/PowerUtils.Text</PackageProjectUrl>
     <NeutralLanguage>en-GB</NeutralLanguage>
 
-    <PackageOutputPath>bin\</PackageOutputPath>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/TechNobre/PowerUtils.Text</RepositoryUrl>
   </PropertyGroup>
 
 
@@ -41,54 +49,19 @@
   <PropertyGroup>
     <DocumentationFile>bin\PowerUtils.Text.xml</DocumentationFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <NoWarn>$(NoWarn);1591</NoWarn>
-    <!-- Prevent XML documentation warnings -->
+    <NoWarn>$(NoWarn);1591</NoWarn> <!-- Prevent XML documentation warnings -->
   </PropertyGroup>
 
 
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>none</DebugType>
-    <Optimize>true</Optimize>
-    <DefineConstants>RELEASE;TRACE</DefineConstants>
-    <ErrorReport>none</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-
-
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-    <DefineConstants>NETSTANDARD;NETSTANDARD2_0</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.1' ">
-    <DefineConstants>NETSTANDARD;NETSTANDARD2_1</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net462' ">
-    <DefineConstants>NETFRAMEWORK;NET462</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net48' ">
-    <DefineConstants>NETFRAMEWORK;NET48</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' ">
-    <DefineConstants>NETCOREAPP;NETCOREAPP3_1</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net5.0' ">
-    <DefineConstants>NET;NET5</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
-    <DefineConstants>NET;NET6</DefineConstants>
-  </PropertyGroup>
-
-
+  <!-- Tests -->
   <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+      <_Parameter1>$(AssemblyName).Tests</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
+
+  <ItemGroup Condition="'$(Configuration)'=='Release'">
     <None Include="..\LICENSE" Pack="true" PackagePath=""/>
   </ItemGroup>
 

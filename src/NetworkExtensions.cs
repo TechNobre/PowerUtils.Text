@@ -74,7 +74,7 @@ namespace PowerUtils.Text
             return paths.ToString().TrimEnd(URL_SEPARATOR);
         }
 
-#if !(NET462 || NET48)
+#if !NETFRAMEWORK
         /// <summary>
         /// Convert an object to a QueryString
         /// </summary>
