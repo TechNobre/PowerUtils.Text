@@ -1,10 +1,9 @@
 ﻿namespace PowerUtils.Text.Tests.TextExtensionsTests;
 
-[Trait("Extension", "CleanSpecialCharacters")]
 public class CleanSpecialCharactersTests
 {
-    [Fact(DisplayName = "String null should return null")]
-    public void CompressText_Null_ReturnNull()
+    [Fact]
+    public void Null_CompressText_Null()
     {
         // Arrange
         string input = null;
@@ -19,8 +18,8 @@ public class CleanSpecialCharactersTests
             .BeNull();
     }
 
-    [Fact(DisplayName = "String only empty should return empty")]
-    public void CleanSpecialCharacters_Empty_ReturnEmpty()
+    [Fact]
+    public void Empty_CleanSpecialCharacters_Empty()
     {
         // Arrange
         var input = "";
@@ -35,12 +34,12 @@ public class CleanSpecialCharactersTests
             .BeEmpty();
     }
 
-    [Theory(DisplayName = "Test texts - Replace to other character")]
+    [Theory]
     [InlineData("hello world", "hello-world")]
     [InlineData("hello world!!!", "hello-world---")]
     [InlineData("#hello#world3", "-hello-world3")]
     [InlineData("Hello World", "Hello-World")]
-    public void CleanSpecialCharacters_Text_ReturnStringCleanWithOtherCharacter(string input, string expected)
+    public void Text_CleanSpecialCharacters_StringCleanWithOtherCharacter(string input, string expected)
     {
         // Arrange & Act
         var act = input.CleanSpecialCharacters("-");
@@ -51,11 +50,11 @@ public class CleanSpecialCharactersTests
             .Be(expected);
     }
 
-    [Theory(DisplayName = "Test texts")]
+    [Theory]
     [InlineData("hello world", "helloworld")]
     [InlineData("Hello World!!!", "HelloWorld")]
     [InlineData("#hello#world3", "helloworld3")]
-    public void CleanSpecialCharacters_Text_ReturnStringClean(string input, string expected)
+    public void Text_CleanSpecialCharacters_StringClean(string input, string expected)
     {
         // Arrange & Act
         var act = input.CleanSpecialCharacters();

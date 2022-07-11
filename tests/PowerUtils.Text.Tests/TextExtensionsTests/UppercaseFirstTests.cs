@@ -1,10 +1,9 @@
 ﻿namespace PowerUtils.Text.Tests.TextExtensionsTests;
 
-[Trait("Extension", "UppercaseFirst")]
 public class UppercaseFirstTests
 {
-    [Fact(DisplayName = "String null - Should return null")]
-    public void LowercaseFirst_Null_ReturnNull()
+    [Fact]
+    public void Null_UppercaseFirst_Null()
     {
         // Arrange
         string input = null;
@@ -19,8 +18,8 @@ public class UppercaseFirstTests
             .BeNull();
     }
 
-    [Fact(DisplayName = "String only empty - Should return empty")]
-    public void UppercaseFirst_Empty_ReturnEmpty()
+    [Fact]
+    public void Empty_UppercaseFirst_Empty()
     {
         // Arrange
         var input = "";
@@ -35,8 +34,8 @@ public class UppercaseFirstTests
             .BeEmpty();
     }
 
-    [Fact(DisplayName = "String with spaces before text")]
-    public void UppercaseFirst_LessMaxLength_ReturnEqualsInput1()
+    [Fact]
+    public void SpaceFirstCharacter_UppercaseFirst_EqualsInput1()
     {
         // Arrange
         var input = " Hello world!!!";
@@ -51,24 +50,8 @@ public class UppercaseFirstTests
             .Be(input);
     }
 
-    [Fact(DisplayName = "String with spaces before text")]
-    public void UppercaseFirst_LessMaxLength_ReturnEqualsInput2()
-    {
-        // Arrange
-        var input = " hello world!!!";
-
-
-        // Act
-        var act = input.UppercaseFirst();
-
-
-        // Assert
-        act.Should()
-            .Be(input);
-    }
-
-    [Fact(DisplayName = "String lowercase")]
-    public void UppercaseFirst_Lowercase_ReturnsupperFirstCharacter()
+    [Fact]
+    public void StringLowercase_UppercaseFirst_UpperFirstCharacter()
     {
         // Arrange
         var input = "hello world!!!";
@@ -83,8 +66,8 @@ public class UppercaseFirstTests
             .Be("Hello world!!!");
     }
 
-    [Fact(DisplayName = "String lowercase with first character already upper")]
-    public void UppercaseFirst_AlreadyUpper_ReturnsupperFirstCharacter()
+    [Fact]
+    public void FirstCharacterUpper_UppercaseFirst_UpperFirstCharacter()
     {
         // Arrange
         var input = "Hello world!!!";

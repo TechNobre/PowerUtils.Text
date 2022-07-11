@@ -2,11 +2,10 @@
 
 namespace PowerUtils.Text.Tests.TextExtensionsTests;
 
-[Trait("Extension", "CleanExtraLineBreak")]
 public class CleanExtraLineBreakTests
 {
-    [Fact(DisplayName = "String only empty should return empty")]
-    public void CleanExtraLineBreak_Null_ReturnNull()
+    [Fact]
+    public void Null_CleanExtraLineBreak_Null()
     {
         // Arrange
         string input = null;
@@ -21,8 +20,8 @@ public class CleanExtraLineBreakTests
             .BeNull();
     }
 
-    [Fact(DisplayName = "String only empty should return empty")]
-    public void CleanExtraLineBreak_Empty_ReturnEmpty()
+    [Fact]
+    public void Empty_CleanExtraLineBreak_Empty()
     {
         // Arrange
         var input = "";
@@ -37,8 +36,8 @@ public class CleanExtraLineBreakTests
             .BeEmpty();
     }
 
-    [Fact(DisplayName = "String with double spaces")]
-    public void CleanExtraLineBreak_WithDoubleSpaces_resultEqualsInput()
+    [Fact]
+    public void WithDoubleSpaces_CleanExtraLineBreak_EqualsInput()
     {
         // Arrange
         var input = "  Hello  world...    I am Nelson  Nobre  ";
@@ -53,8 +52,8 @@ public class CleanExtraLineBreakTests
             .Be("  Hello  world...    I am Nelson  Nobre  ");
     }
 
-    [Fact(DisplayName = "String with line breaks must keep the double spaces")]
-    public void CleanExtraLineBreak_LineBreaks_ReturnStringWithLineBreaks()
+    [Fact]
+    public void LineBreaks_CleanExtraLineBreak_StringWithLineBreaks()
     {
         // Arrange
         var input = "  Hello  world...  " + Environment.NewLine + Environment.NewLine + "  I am Nelson  Nobre     ";
@@ -69,8 +68,8 @@ public class CleanExtraLineBreakTests
             .Be("  Hello  world..." + Environment.NewLine + "I am Nelson  Nobre     ");
     }
 
-    [Fact(DisplayName = "String with double line breaks - Hello world test")]
-    public void CleanExtraLineBreak_HelloWorld_ReturnStringWithoutDoubleSLineBreak()
+    [Fact]
+    public void HelloWorld_CleanExtraLineBreak_StringWithoutDoubleSLineBreak()
     {
         // Arrange
         var input = "Hello" + Environment.NewLine + Environment.NewLine + Environment.NewLine + "World!!!";

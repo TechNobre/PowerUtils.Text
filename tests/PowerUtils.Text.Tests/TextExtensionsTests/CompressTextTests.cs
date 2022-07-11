@@ -1,10 +1,9 @@
 ﻿namespace PowerUtils.Text.Tests.TextExtensionsTests;
 
-[Trait("Extension", "CompressText")]
 public class CompressTextTests
 {
-    [Fact(DisplayName = "String null should return null")]
-    public void CompressText_Null_ReturnNull()
+    [Fact]
+    public void Null_CompressText_Null()
     {
         // Arrange
         string input = null;
@@ -19,8 +18,8 @@ public class CompressTextTests
             .BeNull();
     }
 
-    [Fact(DisplayName = "String only empty should return empty")]
-    public void CompressText_Empty_ReturnEmpty()
+    [Fact]
+    public void Empty_CompressText_Empty()
     {
         // Arrange
         var input = "";
@@ -35,8 +34,8 @@ public class CompressTextTests
             .BeEmpty();
     }
 
-    [Fact(DisplayName = "String less max length should return the input")]
-    public void CompressText_LessMaxLength_ReturnEqualsInput1()
+    [Fact]
+    public void EqualsMaxLength_CompressText_EqualsInput()
     {
         // Arrange
         var input = "HelLo";
@@ -54,28 +53,8 @@ public class CompressTextTests
             .HaveLength(maxLength);
     }
 
-    [Fact(DisplayName = "String less max length should return the input 1")]
-    public void CompressText_LessMaxLength_ReturnEqualsInput2()
-    {
-        // Arrange
-        var input = "HelLo";
-        var maxLength = 5;
-
-
-        // Act
-        var act = input.CompressText(maxLength);
-
-
-        // Assert
-        act.Should()
-            .Be("HelLo");
-        act.Should()
-            .HaveLength(maxLength);
-    }
-
-
-    [Fact(DisplayName = "String equals to max length should return the input")]
-    public void CompressText_EqualsMaxLength_ReturnEqualsInput()
+    [Fact]
+    public void LessMaxLength_CompressText_EqualsInput()
     {
         // Arrange
         var input = "Hello";
@@ -93,8 +72,8 @@ public class CompressTextTests
             .HaveLength(maxLength);
     }
 
-    [Fact(DisplayName = "String greater to max length should return the input")]
-    public void CompressText_GreaterMaxLength_ReturnCompressedText()
+    [Fact]
+    public void GreaterMaxLength_CompressText_CompressedText()
     {
         // Arrange
         var input = "Hello world!!!";
