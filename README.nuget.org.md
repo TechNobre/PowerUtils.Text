@@ -6,6 +6,6 @@
 
 
 
-## Contribution <a name="contribution"></a>
+## Contribution
 
 If you have any questions, comments, or suggestions, please open an [issue](https://github.com/TechNobre/PowerUtils.Text/issues/new/choose) or create a [pull request](https://github.com/TechNobre/PowerUtils.Text/compare)
