@@ -13,40 +13,42 @@
 [![License: MIT](https://img.shields.io/github/license/TechNobre/PowerUtils.Text.svg)](https://github.com/TechNobre/PowerUtils.Text/blob/main/LICENSE)
 
 
+- [Support](#support-to)
+- [How to use](#how-to-use)
+    - [Installation](#installation)
+    - [TextExtensions](#TextExtensions)
+        - [CleanExtraSpaces](#string.CleanExtraSpaces)
+        - [CleanExtraLineBreak](#string.CleanExtraLineBreak)
+        - [CleanExtraLineBreakAndLineBreak](#string.CleanExtraLineBreakAndLineBreak)
+        - [EmptyOrWhiteSpace](#string.EmptyOrWhiteSpace)
+        - [CompressText](#string.CompressText)
+        - [Truncate](#string.Truncate)
+        - [CapitalizeName](#string.CapitalizeName)
+        - [CleanSpecialCharacters](#string.CleanSpecialCharacters)
+        - [UppercaseFirst](#string.UppercaseFirst)
+        - [LowercaseFirst](#string.LowercaseFirst)
+        - [ToSnakeCase](#string.ToSnakeCase)
+    - [NetworkExtensions](#NetworkExtensions)
+        - [IsEmail](#string.IsEmail)
+        - [CombineURL](#string.CombineURL)
+        - [ToQueryString](#object.ToQueryString)
+- [Warning](#warning)
+- [Contribution](#contribution)
+- [License](./LICENSE)
+- [Changelog](./CHANGELOG.md)
 
-## Support to
+
+
+## Support to <a name="support-to"></a>
 - .NET 3.1 or more
 - .NET Framework 4.6.2 or more
 - .NET Standard 2.0 or more
 
 
 
-## Features
+## How to use <a name="how-to-use"></a>
 
-- [TextExtensions](#TextExtensions)
-  - [CleanExtraSpaces](#string.CleanExtraSpaces)
-  - [CleanExtraLineBreak](#string.CleanExtraLineBreak)
-  - [CleanExtraLineBreakAndLineBreak](#string.CleanExtraLineBreakAndLineBreak)
-  - [EmptyOrWhiteSpace](#string.EmptyOrWhiteSpace)
-  - [CompressText](#string.CompressText)
-  - [Truncate](#string.Truncate)
-  - [CapitalizeName](#string.CapitalizeName)
-  - [CleanSpecialCharacters](#string.CleanSpecialCharacters)
-  - [UppercaseFirst](#string.UppercaseFirst)
-  - [LowercaseFirst](#string.LowercaseFirst)
-  - [ToSnakeCase](#string.ToSnakeCase)
-- [NetworkExtensions](#NetworkExtensions)
-  - [IsEmail](#string.IsEmail)
-  - [CombineURL](#string.CombineURL)
-  - [ToQueryString](#object.ToQueryString)
-
-
-
-## Documentation
-
-### How to use
-
-#### Install NuGet package
+### Install NuGet package <a name="installation"></a>
 This package is available through Nuget Packages: https://www.nuget.org/packages/PowerUtils.Text
 
 **Nuget**
@@ -192,23 +194,11 @@ var result = parameters.ToQueryString();
 
 
 
-## :warning: Warning
+## :warning: Warning <a name="warning"></a>
 Discontinued the extension `string.EmptyOrWhiteSpace()`. New method `string.EmptyOrWhiteSpaceToNull()` will be removed in 2022/08/31.
 
 
 
-## Contribution
+## Contribution <a name="contribution"></a>
 
-*Help me to help others*
-
-
-
-## LICENSE
-
-[MIT](https://github.com/TechNobre/PowerUtils.Text/blob/main/LICENSE)
-
-
-
-## Changelog
-
-[Here](./CHANGELOG.md)
+If you have any questions, comments, or suggestions, please open an [issue](https://github.com/TechNobre/PowerUtils.Text/issues/new/choose) or create a [pull request](https://github.com/TechNobre/PowerUtils.Text/compare)
