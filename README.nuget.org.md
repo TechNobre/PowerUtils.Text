@@ -1,6 +1,6 @@
 ***Helpers, extensions and utilities for manipulating***
 
-![Tests](https://github.com/TechNobre/PowerUtils.Text/actions/workflows/test-project.yml/badge.svg)
+![Tests](https://github.com/TechNobre/PowerUtils.Text/actions/workflows/tests.yml/badge.svg)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=TechNobre_PowerUtils.Text&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=TechNobre_PowerUtils.Text)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=TechNobre_PowerUtils.Text&metric=coverage)](https://sonarcloud.io/summary/new_code?id=TechNobre_PowerUtils.Text)
 
