@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/TechNobre/PowerUtils.Text/compare/v2.1.0...v2.2.0) (2022-07-11)
+
+
+### Features
+
+* Add support to debug in runtime `Microsoft.SourceLink.GitHub` ([08885ec](https://github.com/TechNobre/PowerUtils.Text/commit/08885ecf9e8548c156fb661aff832e27bc89cef9))
+
 # [2.1.0](https://github.com/TechNobre/PowerUtils.Text/compare/v2.0.0...v2.1.0) (2022-03-04)
 [Full Changelog]
 
