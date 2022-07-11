@@ -41,6 +41,7 @@
     <NeutralLanguage>en-GB</NeutralLanguage>
 
     <PackageIcon>logo_128x128.png</PackageIcon>
+    <PackageReadmeFile>README.nuget.org.md</PackageReadmeFile>
 
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/TechNobre/PowerUtils.Text</RepositoryUrl>
@@ -66,6 +67,7 @@
   <ItemGroup Condition="'$(Configuration)'=='Release'">
     <None Include="..\assets\logo\logo_128x128.png" Pack="true" PackagePath="" />
     <None Include="..\LICENSE" Pack="true" PackagePath=""/>
+    <None Include="..\README.nuget.org.md" Pack="true" PackagePath="" />
   </ItemGroup>
 
 
