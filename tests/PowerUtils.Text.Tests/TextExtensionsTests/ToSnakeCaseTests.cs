@@ -1,9 +1,8 @@
 ﻿namespace PowerUtils.Text.Tests.TextExtensionsTests;
 
-[Trait("Extension", "ToSnakeCase")]
 public class ToSnakeCaseTests
 {
-    [Theory(DisplayName = "Converto a text to snake case")]
+    [Theory]
     [InlineData(null, null)]
     [InlineData("", "")]
     [InlineData("TestSC", "test_sc")]
@@ -27,7 +26,7 @@ public class ToSnakeCaseTests
     [InlineData("Test 123Case 111", "test_123case_111")]
     [InlineData("Test 123Case__", "test_123case__")]
     [InlineData("Test 123Case1__", "test_123case1__")]
-    public void ToSnakeCase(string input, string expected)
+    public void AnyString_ToSnakeCase_FormattedInSnakeCase(string input, string expected)
     {
         // Arrange &&  Act
         var act = input.ToSnakeCase();

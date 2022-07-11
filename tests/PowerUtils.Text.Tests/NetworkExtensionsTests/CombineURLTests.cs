@@ -2,11 +2,10 @@
 
 namespace PowerUtils.Text.Tests.NetworkExtensionsTests;
 
-[Trait("Extension", "CombineURL")]
 public class CombineURLTests
 {
-    [Fact(DisplayName = "Combine root URL with root null - Should return an 'ArgumentException'")]
-    public void URLCombine_Null_ArgumentException()
+    [Fact]
+    public void Null_URLCombine_ArgumentException()
     {
         // Arrange
         string root = null;
@@ -21,8 +20,8 @@ public class CombineURLTests
             .BeOfType<ArgumentException>();
     }
 
-    [Fact(DisplayName = "Combine root URL with root empty - Should return an 'ArgumentException'")]
-    public void URLCombine_Empty_ArgumentException()
+    [Fact]
+    public void Empty_URLCombine_ArgumentException()
     {
         // Arrange
         var root = "";
@@ -37,8 +36,8 @@ public class CombineURLTests
             .BeOfType<ArgumentException>();
     }
 
-    [Fact(DisplayName = "Combine root URL with root WhiteSpace - Should return an 'ArgumentException'")]
-    public void URLCombine_WhiteSpace_ArgumentException()
+    [Fact]
+    public void WhiteSpace_URLCombine_ArgumentException()
     {
         // Arrange
         var root = "     ";
@@ -53,8 +52,8 @@ public class CombineURLTests
             .BeOfType<ArgumentException>();
     }
 
-    [Fact(DisplayName = "Combine root URL with root with empty segments - Should return an 'ArgumentException'")]
-    public void URLCombine_EmptySegments_ArgumentException()
+    [Fact]
+    public void EmptySegments_URLCombine_ArgumentException()
     {
         // Arrange
         var root = "fake";
@@ -70,8 +69,8 @@ public class CombineURLTests
             .Be(root);
     }
 
-    [Fact(DisplayName = "Combine root URL with root with null segments - Should return an 'ArgumentException'")]
-    public void URLCombine_NullSegments_ArgumentException()
+    [Fact]
+    public void NullSegments_URLCombine_ArgumentException()
     {
         // Arrange
         var root = "fake";
@@ -87,12 +86,12 @@ public class CombineURLTests
             .Be(root);
     }
 
-    [Theory(DisplayName = "Combine root URL without segments")]
+    [Theory]
     [InlineData("fake", "fake")]
     [InlineData("www.fake.com", "www.fake.com")]
     [InlineData("https://www.fake.com", "https://www.fake.com")]
     [InlineData("https://fake.com", "https://fake.com")]
-    public void URLCombine_WithoutSegments_CombinedURL(string url, string expected)
+    public void URLWithoutSegments_URLCombine_CombinedURL(string url, string expected)
     {
         // Arrange & Act
         var act = url.CombineURL();
@@ -103,13 +102,13 @@ public class CombineURLTests
             .Be(expected);
     }
 
-    [Theory(DisplayName = "Combine root URL with 1 segment")]
+    [Theory]
     [InlineData("fake", null, "fake")]
     [InlineData("www.fake.com", "fake", "www.fake.com/fake")]
     [InlineData("www.fake.com", "fake1/fake2/fake3", "www.fake.com/fake1/fake2/fake3")]
     [InlineData("https://www.fake.com", "fake", "https://www.fake.com/fake")]
     [InlineData("https://fake.com", "fake", "https://fake.com/fake")]
-    public void URLCombine_With1Segments_CombinedURL(string url, string segment, string expected)
+    public void URLWith1Segment_URLCombine_CombinedURL(string url, string segment, string expected)
     {
         // Arrange & Act
         var act = url.CombineURL(segment);
@@ -120,7 +119,7 @@ public class CombineURLTests
             .Be(expected);
     }
 
-    [Theory(DisplayName = "Combine root URL with 1 segment")]
+    [Theory]
     [InlineData("fake", null, null, "fake")]
     [InlineData("www.fake.com", "fake1", "fake2", "www.fake.com/fake1/fake2")]
     [InlineData("www.fake.com", "fake1", null, "www.fake.com/fake1")]
@@ -128,7 +127,7 @@ public class CombineURLTests
     [InlineData("https://www.fake.com", "fake1", "fake2", "https://www.fake.com/fake1/fake2")]
     [InlineData("https://fake.com", "fake1", "fake2", "https://fake.com/fake1/fake2")]
     [InlineData("http://localhost:8080", "clients", "photos", "http://localhost:8080/clients/photos")]
-    public void URLCombine_With2Segments_CombinedURL(string url, string segment1, string segment2, string expected)
+    public void URLWith2Segments_URLCombine_CombinedURL(string url, string segment1, string segment2, string expected)
     {
         // Arrange & Act
         var act = url.CombineURL(segment1, segment2);

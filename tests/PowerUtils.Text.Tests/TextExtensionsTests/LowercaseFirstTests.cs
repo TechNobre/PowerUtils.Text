@@ -1,10 +1,9 @@
 ﻿namespace PowerUtils.Text.Tests.TextExtensionsTests;
 
-[Trait("Extension", "LowercaseFirst")]
 public class LowercaseFirstTests
 {
-    [Fact(DisplayName = "String null - Should return null")]
-    public void LowercaseFirst_Null_ReturnNull()
+    [Fact]
+    public void Null_LowercaseFirst_Null()
     {
         // Arrange
         string input = null;
@@ -19,8 +18,8 @@ public class LowercaseFirstTests
             .BeNull();
     }
 
-    [Fact(DisplayName = "String only empty - Should return empty")]
-    public void LowercaseFirst_Empty_ReturnEmpty()
+    [Fact]
+    public void Empty_LowercaseFirst_Empty()
     {
         // Arrange
         var input = "";
@@ -35,8 +34,8 @@ public class LowercaseFirstTests
             .BeEmpty();
     }
 
-    [Fact(DisplayName = "String with spaces before text")]
-    public void LowercaseFirst_LessMaxLength_ReturnEqualsInput1()
+    [Fact]
+    public void SpaceFirstCharacter_LowercaseFirst_EqualsInput()
     {
         // Arrange
         var input = " Hello world!!!";
@@ -51,8 +50,8 @@ public class LowercaseFirstTests
             .Be(input);
     }
 
-    [Fact(DisplayName = "String with spaces before text")]
-    public void LowercaseFirst_LessMaxLength_ReturnEqualsInput2()
+    [Fact]
+    public void LowercaseFirst_LowercaseFirst_LowercaseFirst()
     {
         // Arrange
         var input = " hello world!!!";
@@ -67,8 +66,8 @@ public class LowercaseFirstTests
             .Be(input);
     }
 
-    [Fact(DisplayName = "String lowercase")]
-    public void LowercaseFirst_Lowercase_ReturnsupperFirstCharacter()
+    [Fact]
+    public void StringLowercase_LowercaseFirst_EqualsInput()
     {
         // Arrange
         var input = "hello world!!!";
@@ -83,8 +82,8 @@ public class LowercaseFirstTests
             .Be("hello world!!!");
     }
 
-    [Fact(DisplayName = "String lowercase with first character already upper")]
-    public void LowercaseFirst_AlreadyUpper_ReturnsupperFirstCharacter()
+    [Fact]
+    public void UpperFirstCharacter_LowercaseFirst_LowerFirstCharacter()
     {
         // Arrange
         var input = "Hello world!!!";

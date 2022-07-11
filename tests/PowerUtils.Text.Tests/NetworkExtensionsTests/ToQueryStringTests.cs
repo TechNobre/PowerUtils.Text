@@ -2,11 +2,10 @@
 
 namespace PowerUtils.Text.Tests.NetworkExtensionsTests;
 
-[Trait("Extension", "ToQueryString")]
 public class ToQueryStringTests
 {
-    [Fact(DisplayName = "Try to convert a null object to QueryString - Should return an 'ArgumentNullException'")]
-    public void ToQueryString_Null_ArgumentNullException()
+    [Fact]
+    public void Null_ToQueryString_ArgumentNullException()
     {
         // Arrange
         object value = null;
@@ -21,8 +20,8 @@ public class ToQueryStringTests
             .BeOfType<ArgumentNullException>();
     }
 
-    [Fact(DisplayName = "Try to convert a short value to QueryString - Should return an 'NotSupportedException'")]
-    public void ToQueryString_Short_ArgumentNullException()
+    [Fact]
+    public void ShortNumber_ToQueryString_ArgumentNullException()
     {
         // Arrange
         short value = 4212;
@@ -37,8 +36,8 @@ public class ToQueryStringTests
             .BeOfType<NotSupportedException>();
     }
 
-    [Fact(DisplayName = "Try to convert a ushort value to QueryString - Should return an 'NotSupportedException'")]
-    public void ToQueryString_UShort_ArgumentNullException()
+    [Fact]
+    public void UShortNumber_ToQueryString_ArgumentNullException()
     {
         // Arrange
         ushort value = 4212;
@@ -53,8 +52,8 @@ public class ToQueryStringTests
             .BeOfType<NotSupportedException>();
     }
 
-    [Fact(DisplayName = "Try to convert a int value to QueryString - Should return an 'NotSupportedException'")]
-    public void ToQueryString_Int_ArgumentNullException()
+    [Fact]
+    public void IntNumber_ToQueryString_ArgumentNullException()
     {
         // Arrange
         int value = 4212;
@@ -69,8 +68,8 @@ public class ToQueryStringTests
             .BeOfType<NotSupportedException>();
     }
 
-    [Fact(DisplayName = "Try to convert a uint value to QueryString - Should return an 'NotSupportedException'")]
-    public void ToQueryString_UInt_ArgumentNullException()
+    [Fact]
+    public void UIntNumber_ToQueryString_ArgumentNullException()
     {
         // Arrange
         uint value = 4212;
@@ -85,8 +84,8 @@ public class ToQueryStringTests
             .BeOfType<NotSupportedException>();
     }
 
-    [Fact(DisplayName = "Try to convert a long value to QueryString - Should return an 'NotSupportedException'")]
-    public void ToQueryString_Long_ArgumentNullException()
+    [Fact]
+    public void LongNumber_ToQueryString_ArgumentNullException()
     {
         // Arrange
         long value = 4212;
@@ -101,8 +100,8 @@ public class ToQueryStringTests
             .BeOfType<NotSupportedException>();
     }
 
-    [Fact(DisplayName = "Try to convert a ulong value to QueryString - Should return an 'NotSupportedException'")]
-    public void ToQueryString_ULong_ArgumentNullException()
+    [Fact]
+    public void ULongNumber_ToQueryString_ArgumentNullException()
     {
         // Arrange
         ulong value = 4212;
@@ -117,8 +116,8 @@ public class ToQueryStringTests
             .BeOfType<NotSupportedException>();
     }
 
-    [Fact(DisplayName = "Try to convert a float value to QueryString - Should return an 'NotSupportedException'")]
-    public void ToQueryString_Float_ArgumentNullException()
+    [Fact]
+    public void FloatNumber_ToQueryString_ArgumentNullException()
     {
         // Arrange
         float value = 4212;
@@ -133,8 +132,8 @@ public class ToQueryStringTests
             .BeOfType<NotSupportedException>();
     }
 
-    [Fact(DisplayName = "Try to convert a double value to QueryString - Should return an 'NotSupportedException'")]
-    public void ToQueryString_Double_ArgumentNullException()
+    [Fact]
+    public void DoubleNumber_ToQueryString_ArgumentNullException()
     {
         // Arrange
         double value = 4212;
@@ -149,8 +148,8 @@ public class ToQueryStringTests
             .BeOfType<NotSupportedException>();
     }
 
-    [Fact(DisplayName = "Try to convert a decimal value to QueryString - Should return an 'NotSupportedException'")]
-    public void ToQueryString_Decimal_ArgumentNullException()
+    [Fact]
+    public void DecimalNumber_ToQueryString_ArgumentNullException()
     {
         // Arrange
         decimal value = 4212;
@@ -165,8 +164,8 @@ public class ToQueryStringTests
             .BeOfType<NotSupportedException>();
     }
 
-    [Fact(DisplayName = "Convert a object without parameters to QueryString - Should return an empty string")]
-    public void ToQueryString_WithoutParameters_Empty()
+    [Fact]
+    public void ObjectWithoutParameters_ToQueryString_Empty()
     {
         // Arrange
         object value = new object();
@@ -181,8 +180,8 @@ public class ToQueryStringTests
             .BeEmpty();
     }
 
-    [Fact(DisplayName = "Convert a object with parameters to QueryString - Should return an QueryString")]
-    public void ToQueryString_WithParameters_Empty()
+    [Fact]
+    public void ObjectWithParameters_ToQueryString_QueryString()
     {
         // Arrange
         object parameters = new

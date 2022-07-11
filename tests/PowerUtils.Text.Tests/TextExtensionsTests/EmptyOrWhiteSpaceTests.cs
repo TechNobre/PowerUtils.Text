@@ -2,12 +2,11 @@
 
 namespace PowerUtils.Text.Tests.TextExtensionsTests;
 
-[Trait("Extension", "EmptyOrWhiteSpace")]
 public class EmptyOrWhiteSpaceTests
 {
-    [Fact(DisplayName = "String null should return null")]
+    [Fact]
     [Obsolete]
-    public void EmptyOrWhiteSpace_Null_ReturnNull()
+    public void Null_EmptyOrWhiteSpace_Null()
     {
         // Arrange
         string input = null;
@@ -22,9 +21,9 @@ public class EmptyOrWhiteSpaceTests
             .BeNull();
     }
 
-    [Fact(DisplayName = "String only empty should return null")]
+    [Fact]
     [Obsolete]
-    public void EmptyOrWhiteSpace_Empty_ReturnNull()
+    public void Empty_EmptyOrWhiteSpace_Null()
     {
         // Arrange
         var input = "";
@@ -39,9 +38,9 @@ public class EmptyOrWhiteSpaceTests
             .BeNull();
     }
 
-    [Fact(DisplayName = "String with white spaces should return null")]
+    [Fact]
     [Obsolete]
-    public void EmptyOrWhiteSpace_WithWhiteSpaces_ReturnNull()
+    public void WithWhiteSpaces_EmptyOrWhiteSpace_Null()
     {
         // Arrange
         var input = "       ";
@@ -56,9 +55,9 @@ public class EmptyOrWhiteSpaceTests
             .BeNull();
     }
 
-    [Fact(DisplayName = "String filled should return the input")]
+    [Fact]
     [Obsolete]
-    public void EmptyOrWhiteSpace_Filled_ReturnEqualsInput()
+    public void Filled_EmptyOrWhiteSpace_EqualsInput()
     {
         // Arrange
         var input = " Hello world!!   ";

@@ -15,7 +15,7 @@
 
 
   <PropertyGroup>
-    <DefaultItemExcludes>$(DefaultItemExcludes);coverage.opencover.xml</DefaultItemExcludes>
+    <DefaultItemExcludes>$(DefaultItemExcludes);coverage.*opencover.xml</DefaultItemExcludes>
   </PropertyGroup>
 
 

@@ -1,10 +1,9 @@
 ﻿namespace PowerUtils.Text.Tests.TextExtensionsTests;
 
-[Trait("Extension", "Truncate")]
 public class TruncateTests
 {
-    [Fact(DisplayName = "String null should return null")]
-    public void CompressText_Null_ReturnNull()
+    [Fact]
+    public void Null_CompressText_Null()
     {
         // Arrange
         string input = null;
@@ -19,8 +18,8 @@ public class TruncateTests
             .BeNull();
     }
 
-    [Fact(DisplayName = "String only empty should return empty")]
-    public void Truncate_Empty_ReturnEmpty()
+    [Fact]
+    public void Empty_Truncate_Empty()
     {
         // Arrange
         var input = "";
@@ -35,8 +34,8 @@ public class TruncateTests
             .BeEmpty();
     }
 
-    [Fact(DisplayName = "String less max length should return the input")]
-    public void Truncate_LessMaxLength_ReturnEqualsInput1()
+    [Fact]
+    public void EqualsMaxLength_Truncate_EqualsInput()
     {
         // Arrange
         var input = "HelLo";
@@ -54,28 +53,8 @@ public class TruncateTests
             .HaveLength(maxLength);
     }
 
-    [Fact(DisplayName = "String less max length should return the input 1")]
-    public void Truncate_LessMaxLength_ReturnEqualsInput2()
-    {
-        // Arrange
-        var input = "HelLo";
-        var maxLength = 5;
-
-
-        // Act
-        var act = input.Truncate(maxLength);
-
-
-        // Assert
-        act.Should()
-            .Be("HelLo");
-        act.Should()
-            .HaveLength(maxLength);
-    }
-
-
-    [Fact(DisplayName = "String equals to max length should return the input")]
-    public void Truncate_EqualsMaxLength_ReturnEqualsInput()
+    [Fact]
+    public void LessMaxLength_Truncate_EqualsInput()
     {
         // Arrange
         var input = "Hello";
@@ -93,8 +72,8 @@ public class TruncateTests
             .HaveLength(maxLength);
     }
 
-    [Fact(DisplayName = "String greater to max length should return the input")]
-    public void Truncate_GreaterMaxLength_ReturnCompressedText1()
+    [Fact]
+    public void GreaterMaxLength_Truncate_CompressedText1()
     {
         // Arrange
         var input = "Hello world!!!";
@@ -112,8 +91,8 @@ public class TruncateTests
             .HaveLength(maxLength);
     }
 
-    [Fact(DisplayName = "String greater to max length should return the input")]
-    public void Truncate_GreaterMaxLength_ReturnCompressedText2()
+    [Fact]
+    public void GreaterMaxLength_Truncate_CompressedText2()
     {
         // Arrange
         var input = "Hello world!!!";

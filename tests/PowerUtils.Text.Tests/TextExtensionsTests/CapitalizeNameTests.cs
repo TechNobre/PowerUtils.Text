@@ -1,10 +1,9 @@
 ﻿namespace PowerUtils.Text.Tests.TextExtensionsTests;
 
-[Trait("Extension", "CapitalizeName")]
 public class CapitalizeNameTests
 {
-    [Fact(DisplayName = "String null should return null")]
-    public void CompressText_Null_ReturnNull()
+    [Fact]
+    public void Null_CompressText_Null()
     {
         // Arrange
         string input = null;
@@ -19,8 +18,8 @@ public class CapitalizeNameTests
             .BeNull();
     }
 
-    [Fact(DisplayName = "String only empty should return empty")]
-    public void CapitalizeName_Empty_ReturnEmpty()
+    [Fact]
+    public void Empty_CapitalizeName_Empty()
     {
         // Arrange
         var input = "";
@@ -35,8 +34,8 @@ public class CapitalizeNameTests
             .BeEmpty();
     }
 
-    [Fact(DisplayName = "String only one character")]
-    public void CapitalizeName_OnlyOneCharacter_ReturnCapitalizedText()
+    [Fact]
+    public void OnlyOneCharacter_CapitalizeName_CapitalizedText()
     {
         // Arrange
         var input = "a";
@@ -51,8 +50,8 @@ public class CapitalizeNameTests
             .Be("A");
     }
 
-    [Fact(DisplayName = "String one character already capitalized")]
-    public void CapitalizeName_OneCharacterAlreadyCapitalized_ReturnEqualsInput()
+    [Fact]
+    public void OneCharacterAlreadyCapitalized_CapitalizeName_EqualsInput()
     {
         // Arrange
         var input = "A";
@@ -67,8 +66,8 @@ public class CapitalizeNameTests
             .Be("A");
     }
 
-    [Fact(DisplayName = "String a space before one character")]
-    public void CapitalizeName_SpaceBaforeOneCharacter_ReturnCapitalizedText()
+    [Fact]
+    public void SpaceBaforeOneCharacter_CapitalizeName_CapitalizedText()
     {
         // Arrange
         var input = " a";
@@ -83,13 +82,13 @@ public class CapitalizeNameTests
             .Be(" A");
     }
 
-    [Theory(DisplayName = "Test names")]
+    [Theory]
     [InlineData("nelson nobre", "Nelson Nobre")]
     [InlineData("jr.santos", "Jr.Santos")]
     [InlineData("abd al-uzza", "Abd Al-Uzza")]
     [InlineData("'abd al-rahmān", "'Abd Al-Rahmān")]
     [InlineData(" 'abd al-'rahmān", " 'Abd Al-'Rahmān")]
-    public void CapitalizeName_Names_ReturnCapitalizedText(string input, string expected)
+    public void Names_CapitalizeName_CapitalizedText(string input, string expected)
     {
         // Arrange & Act
         var act = input.CapitalizeName();

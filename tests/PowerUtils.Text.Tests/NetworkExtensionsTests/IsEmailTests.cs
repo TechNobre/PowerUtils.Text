@@ -1,9 +1,8 @@
 ﻿namespace PowerUtils.Text.Tests.NetworkExtensionsTests;
 
-[Trait("Extension", "IsEmail")]
 public class IsEmailTests
 {
-    [Theory(DisplayName = "Valid if is an email")]
+    [Theory]
     [InlineData(null, false)]
     [InlineData("", false)]
     [InlineData(" ", false)]
@@ -31,7 +30,7 @@ public class IsEmailTests
     [InlineData("nelson@fake.xn--6frz82g", true)]
     [InlineData("nelson@fake.pt6", true)]
     [InlineData("nelson@fake.6pt", true)]
-    public void IsEmail_Validate_Bool(string email, bool expected)
+    public void AnyString_Validate_IfIsEmail(string email, bool expected)
     {
         // Arrange & Act
         var act = email.IsEmail();
