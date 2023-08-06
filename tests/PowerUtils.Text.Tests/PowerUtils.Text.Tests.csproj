@@ -1,14 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFrameworks>netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
 
     <RootNamespace>PowerUtils.Text.Tests</RootNamespace>
     <AssemblyName>PowerUtils.Text.Tests</AssemblyName>
-
-    <!-- BIN OUTPUT -->
-    <OutputPath>bin</OutputPath>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -23,10 +19,6 @@
     <PackageReference Include="FluentAssertions" Version="6.11.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3" />
     <PackageReference Include="xunit" Version="2.5.0" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.0">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
     <PackageReference Include="coverlet.collector" Version="6.0.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
@@ -37,15 +29,22 @@
     </PackageReference>
   </ItemGroup>
 
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\PowerUtils.Text.csproj" />
+  <ItemGroup Condition=" '$(TargetFramework)' != 'netcoreapp3.1' And '$(TargetFramework)' != 'net5.0'">
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' Or '$(TargetFramework)' == 'net5.0' ">
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 
 
   <ItemGroup>
-    <Using Include="Xunit" />
-    <Using Include="FluentAssertions" />
+    <ProjectReference Include="..\..\src\PowerUtils.Text.csproj" />
   </ItemGroup>
 
 

@@ -3,14 +3,10 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFrameworks>netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
 
     <RootNamespace>PowerUtils.Text.Benchmarks</RootNamespace>
     <AssemblyName>PowerUtils.Text.Benchmarks</AssemblyName>
-
-    <!-- BIN OUTPUT -->
-    <OutputPath>bin</OutputPath>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -35,13 +31,6 @@
     <!-- Exclude the project from analysis -->
     <SonarQubeExclude>true</SonarQubeExclude>
   </PropertyGroup>
-
-
-  <ItemGroup>
-    <Using Include="BenchmarkDotNet.Attributes" />
-    <Using Include="BenchmarkDotNet.Order" />
-    <Using Include="BenchmarkDotNet.Running" />
-  </ItemGroup>
 
 
 </Project>

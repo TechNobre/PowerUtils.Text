@@ -1,68 +1,72 @@
-﻿namespace PowerUtils.Text.Tests.TextExtensionsTests;
+﻿using FluentAssertions;
+using Xunit;
 
-public class EmptyOrWhiteSpaceToNullTests
+namespace PowerUtils.Text.Tests.TextExtensionsTests
 {
-    [Fact]
-    public void Null_EmptyOrWhiteSpace_Null()
+    public class EmptyOrWhiteSpaceToNullTests
     {
-        // Arrange
-        string input = null;
+        [Fact]
+        public void Null_EmptyOrWhiteSpace_Null()
+        {
+            // Arrange
+            string input = null;
 
 
-        // Act
-        var act = input.EmptyOrWhiteSpaceToNull();
+            // Act
+            var act = input.EmptyOrWhiteSpaceToNull();
 
 
-        // Assert
-        act.Should()
-            .BeNull();
-    }
+            // Assert
+            act.Should()
+                .BeNull();
+        }
 
-    [Fact]
-    public void Empty_EmptyOrWhiteSpace_Null()
-    {
-        // Arrange
-        var input = "";
-
-
-        // Act
-        var act = input.EmptyOrWhiteSpaceToNull();
+        [Fact]
+        public void Empty_EmptyOrWhiteSpace_Null()
+        {
+            // Arrange
+            var input = "";
 
 
-        // Assert
-        act.Should()
-            .BeNull();
-    }
-
-    [Fact]
-    public void WithWhiteSpaces_EmptyOrWhiteSpace_Null()
-    {
-        // Arrange
-        var input = "       ";
+            // Act
+            var act = input.EmptyOrWhiteSpaceToNull();
 
 
-        // Act
-        var act = input.EmptyOrWhiteSpaceToNull();
+            // Assert
+            act.Should()
+                .BeNull();
+        }
+
+        [Fact]
+        public void WithWhiteSpaces_EmptyOrWhiteSpace_Null()
+        {
+            // Arrange
+            var input = "       ";
 
 
-        // Assert
-        act.Should()
-            .BeNull();
-    }
-
-    [Fact]
-    public void Filled_EmptyOrWhiteSpace_EqualsInput()
-    {
-        // Arrange
-        var input = " Hello world!!   ";
+            // Act
+            var act = input.EmptyOrWhiteSpaceToNull();
 
 
-        // Act
-        var act = input.EmptyOrWhiteSpaceToNull();
+            // Assert
+            act.Should()
+                .BeNull();
+        }
+
+        [Fact]
+        public void Filled_EmptyOrWhiteSpace_EqualsInput()
+        {
+            // Arrange
+            var input = " Hello world!!   ";
 
 
-        // Assert
-        act.Should()
-            .Be(" Hello world!!   ");
+            // Act
+            var act = input.EmptyOrWhiteSpaceToNull();
+
+
+            // Assert
+            act.Should()
+                .Be(" Hello world!!   ");
+        }
     }
 }

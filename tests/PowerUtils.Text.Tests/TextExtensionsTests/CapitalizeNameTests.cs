@@ -1,101 +1,105 @@
-﻿namespace PowerUtils.Text.Tests.TextExtensionsTests;
+﻿using FluentAssertions;
+using Xunit;
 
-public class CapitalizeNameTests
+namespace PowerUtils.Text.Tests.TextExtensionsTests
 {
-    [Fact]
-    public void Null_CompressText_Null()
+    public class CapitalizeNameTests
     {
-        // Arrange
-        string input = null;
+        [Fact]
+        public void Null_CompressText_Null()
+        {
+            // Arrange
+            string input = null;
 
 
-        // Act
-        var act = input.CapitalizeName();
+            // Act
+            var act = input.CapitalizeName();
 
 
-        // Assert
-        act.Should()
-            .BeNull();
-    }
+            // Assert
+            act.Should()
+                .BeNull();
+        }
 
-    [Fact]
-    public void Empty_CapitalizeName_Empty()
-    {
-        // Arrange
-        var input = "";
-
-
-        // Act
-        var act = input.CapitalizeName();
+        [Fact]
+        public void Empty_CapitalizeName_Empty()
+        {
+            // Arrange
+            var input = "";
 
 
-        // Assert
-        act.Should()
-            .BeEmpty();
-    }
-
-    [Fact]
-    public void OnlyOneCharacter_CapitalizeName_CapitalizedText()
-    {
-        // Arrange
-        var input = "a";
+            // Act
+            var act = input.CapitalizeName();
 
 
-        // Act
-        var act = input.CapitalizeName();
+            // Assert
+            act.Should()
+                .BeEmpty();
+        }
+
+        [Fact]
+        public void OnlyOneCharacter_CapitalizeName_CapitalizedText()
+        {
+            // Arrange
+            var input = "a";
 
 
-        // Assert
-        act.Should()
-            .Be("A");
-    }
-
-    [Fact]
-    public void OneCharacterAlreadyCapitalized_CapitalizeName_EqualsInput()
-    {
-        // Arrange
-        var input = "A";
+            // Act
+            var act = input.CapitalizeName();
 
 
-        // Act
-        var act = input.CapitalizeName();
+            // Assert
+            act.Should()
+                .Be("A");
+        }
+
+        [Fact]
+        public void OneCharacterAlreadyCapitalized_CapitalizeName_EqualsInput()
+        {
+            // Arrange
+            var input = "A";
 
 
-        // Assert
-        act.Should()
-            .Be("A");
-    }
-
-    [Fact]
-    public void SpaceBaforeOneCharacter_CapitalizeName_CapitalizedText()
-    {
-        // Arrange
-        var input = " a";
+            // Act
+            var act = input.CapitalizeName();
 
 
-        // Act
-        var act = input.CapitalizeName();
+            // Assert
+            act.Should()
+                .Be("A");
+        }
+
+        [Fact]
+        public void SpaceBaforeOneCharacter_CapitalizeName_CapitalizedText()
+        {
+            // Arrange
+            var input = " a";
 
 
-        // Assert
-        act.Should()
-            .Be(" A");
-    }
-
-    [Theory]
-    [InlineData("nelson nobre", "Nelson Nobre")]
-    [InlineData("jr.santos", "Jr.Santos")]
-    [InlineData("abd al-uzza", "Abd Al-Uzza")]
-    [InlineData("'abd al-rahmān", "'Abd Al-Rahmān")]
-    [InlineData(" 'abd al-'rahmān", " 'Abd Al-'Rahmān")]
-    public void Names_CapitalizeName_CapitalizedText(string input, string expected)
-    {
-        // Arrange & Act
-        var act = input.CapitalizeName();
+            // Act
+            var act = input.CapitalizeName();
 
 
-        // Assert
-        act.Should()
-            .Be(expected);
+            // Assert
+            act.Should()
+                .Be(" A");
+        }
+
+        [Theory]
+        [InlineData("nelson nobre", "Nelson Nobre")]
+        [InlineData("jr.santos", "Jr.Santos")]
+        [InlineData("abd al-uzza", "Abd Al-Uzza")]
+        [InlineData("'abd al-rahmān", "'Abd Al-Rahmān")]
+        [InlineData(" 'abd al-'rahmān", " 'Abd Al-'Rahmān")]
+        public void Names_CapitalizeName_CapitalizedText(string input, string expected)
+        {
+            // Arrange & Act
+            var act = input.CapitalizeName();
+
+
+            // Assert
+            act.Should()
+                .Be(expected);
+        }
     }
 }

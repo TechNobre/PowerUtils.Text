@@ -1,2 +1,2 @@
 dotnet build -c Release ./tests/PowerUtils.Text.Benchmarks/PowerUtils.Text.Benchmarks.csproj
-dotnet run -p ./tests/PowerUtils.Text.Benchmarks/PowerUtils.Text.Benchmarks.csproj -c Release 
+dotnet run -p ./tests/PowerUtils.Text.Benchmarks/PowerUtils.Text.Benchmarks.csproj -c Release -f net6.0

@@ -1,3 +1,8 @@
-﻿using PowerUtils.Text.Benchmarks.NetworkExtensionsBenchmarks;
+﻿using BenchmarkDotNet.Running;
+using PowerUtils.Text.Benchmarks.NetworkExtensionsBenchmarks;
 
-BenchmarkRunner.Run<CombineURLBenchmarks>();
+internal class Program
+{
+    private static void Main(string[] _)
+        => BenchmarkRunner.Run<CombineURLBenchmarks>();
+}
