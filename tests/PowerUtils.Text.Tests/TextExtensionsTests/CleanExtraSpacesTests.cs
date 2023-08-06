@@ -55,6 +55,22 @@ namespace PowerUtils.Text.Tests.TextExtensionsTests
         }
 
         [Fact]
+        public void TwoTabs_CleanExtraSpaces_OneSpace()
+        {
+            // Arrange
+            var input = "\t\t";
+
+
+            // Act
+            var act = input.CleanExtraSpaces();
+
+
+            // Assert
+            act.Should()
+                .BeEmpty();
+        }
+
+        [Fact]
         public void WithDoubleSpaces_CleanExtraSpaces_StringWithoutDoubleSpaces()
         {
             // Arrange
@@ -91,6 +107,22 @@ namespace PowerUtils.Text.Tests.TextExtensionsTests
         {
             // Arrange
             var input = " Hello  world!!! ";
+
+
+            // Act
+            var act = input.CleanExtraSpaces();
+
+
+            // Assert
+            act.Should()
+                .Be("Hello world!!!");
+        }
+
+        [Fact]
+        public void HelloWorldWithTab_CleanExtraSpaces_StringWithoutTab()
+        {
+            // Arrange
+            var input = " Hello\tworld!!! ";
 
 
             // Act
