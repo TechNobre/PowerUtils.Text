@@ -1,3 +1,26 @@
+# [3.0.0](https://github.com/TechNobre/PowerUtils.Text/compare/v2.2.0...v3.0.0) (2023-08-06)
+
+
+### Bug Fixes
+
+* Soved issue `CleanExtraLineBreak()` removing spaces before and after line breaks ([2c8fc7a](https://github.com/TechNobre/PowerUtils.Text/commit/2c8fc7a84a356eed5a451757fd9125d8cf5397c1))
+
+
+### Code Refactoring
+
+* Removed discontinued extensions ([d4ed02f](https://github.com/TechNobre/PowerUtils.Text/commit/d4ed02f1e8031cd37723da35e2fd636f31791951))
+
+
+### Tests
+
+* Added unit tests for all supported frameworks ([267cf7c](https://github.com/TechNobre/PowerUtils.Text/commit/267cf7cdd9b1ba8baf5a2f23797ae851cba19744))
+
+
+### BREAKING CHANGES
+
+* Removed discontinued extensions `EmptyOrWhiteSpace`
+* Removed supported for `netstandard2.0`, `netstandard2.1`, `net462`, `net48`
+
 # [2.2.0](https://github.com/TechNobre/PowerUtils.Text/compare/v2.1.0...v2.2.0) (2022-07-11)
 
 
