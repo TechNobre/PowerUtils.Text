@@ -9,9 +9,15 @@ namespace PowerUtils.Text
     /// <summary>
     /// Extensions for network strings
     /// </summary>
-    public static class NetworkExtensions
+    public static partial class NetworkExtensions
     {
-        private static readonly Regex _emailRegex = new Regex(@"^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$", RegexOptions.Compiled);
+#if NET7_0_OR_GREATER
+        [GeneratedRegex(@"^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$", RegexOptions.Compiled)]
+        private static partial Regex _emailRegex();
+#else
+        private static readonly Regex _emailRegex = new Regex(@"^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$", RegexOptions.Compiled, TimeSpan.FromMilliseconds(200));
+#endif
+
 
         /// <summary>
         /// Check if the input is an email
@@ -25,7 +31,12 @@ namespace PowerUtils.Text
                 return false;
             }
 
+
+#if NET7_0_OR_GREATER
+            return _emailRegex().IsMatch(email);
+#else
             return _emailRegex.IsMatch(email);
+#endif
         }
 
         /// <summary>
