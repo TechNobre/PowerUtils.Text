@@ -39,6 +39,22 @@ namespace PowerUtils.Text.Tests.TextExtensionsTests
         }
 
         [Fact]
+        public void TwoSpaces_CleanExtraSpaces_OneSpace()
+        {
+            // Arrange
+            var input = "  ";
+
+
+            // Act
+            var act = input.CleanExtraSpaces();
+
+
+            // Assert
+            act.Should()
+                .BeEmpty();
+        }
+
+        [Fact]
         public void WithDoubleSpaces_CleanExtraSpaces_StringWithoutDoubleSpaces()
         {
             // Arrange

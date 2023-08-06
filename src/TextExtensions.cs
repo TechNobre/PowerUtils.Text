@@ -26,12 +26,10 @@ namespace PowerUtils.Text
                 return null;
             }
 
-
-            input = RegexUtils.TabRegex().Replace(input, " "); // Replace tabs to one space
-            input = RegexUtils.MultiSpaceRegex().Replace(input, " "); // Replace double spaces to one space
-            input = RegexUtils.SpaceAfterLineBreakRegex().Replace(input, Environment.NewLine); // Clean spaces after line breaks
-            input = RegexUtils.SpaceBeforeLineBreakRegex().Replace(input, Environment.NewLine); // Clean spaces before line breaks
-
+            input = RegexUtils.TabRegex.Replace(input, " "); // Replace tabs to one space
+            input = RegexUtils.MultiSpaceRegex.Replace(input, " "); // Replace double spaces to one space
+            input = RegexUtils.SpaceAfterLineBreakRegex.Replace(input, Environment.NewLine); // Clean spaces after line breaks
+            input = RegexUtils.SpaceBeforeLineBreakRegex.Replace(input, Environment.NewLine); // Clean spaces before line breaks
 
             input = input.Trim();
 
@@ -50,7 +48,7 @@ namespace PowerUtils.Text
                 return null;
             }
 
-            input = RegexUtils.MultiLineBreakRegex().Replace(input, Environment.NewLine); // Clean double line breaks
+            input = RegexUtils.MultiLineBreakRegex.Replace(input, Environment.NewLine); // Clean double line breaks
 
             return input;
         }
