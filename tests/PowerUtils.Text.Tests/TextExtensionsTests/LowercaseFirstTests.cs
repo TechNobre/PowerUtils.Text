@@ -1,100 +1,104 @@
-﻿namespace PowerUtils.Text.Tests.TextExtensionsTests;
+﻿using FluentAssertions;
+using Xunit;
 
-public class LowercaseFirstTests
+namespace PowerUtils.Text.Tests.TextExtensionsTests
 {
-    [Fact]
-    public void Null_LowercaseFirst_Null()
+    public class LowercaseFirstTests
     {
-        // Arrange
-        string input = null;
+        [Fact]
+        public void Null_LowercaseFirst_Null()
+        {
+            // Arrange
+            string input = null;
 
 
-        // Act
-        var act = input.LowercaseFirst();
+            // Act
+            var act = input.LowercaseFirst();
 
 
-        // Assert
-        act.Should()
-            .BeNull();
-    }
+            // Assert
+            act.Should()
+                .BeNull();
+        }
 
-    [Fact]
-    public void Empty_LowercaseFirst_Empty()
-    {
-        // Arrange
-        var input = "";
-
-
-        // Act
-        var act = input.LowercaseFirst();
+        [Fact]
+        public void Empty_LowercaseFirst_Empty()
+        {
+            // Arrange
+            var input = "";
 
 
-        // Assert
-        act.Should()
-            .BeEmpty();
-    }
-
-    [Fact]
-    public void SpaceFirstCharacter_LowercaseFirst_EqualsInput()
-    {
-        // Arrange
-        var input = " Hello world!!!";
+            // Act
+            var act = input.LowercaseFirst();
 
 
-        // Act
-        var act = input.LowercaseFirst();
+            // Assert
+            act.Should()
+                .BeEmpty();
+        }
+
+        [Fact]
+        public void SpaceFirstCharacter_LowercaseFirst_EqualsInput()
+        {
+            // Arrange
+            var input = " Hello world!!!";
 
 
-        // Assert
-        act.Should()
-            .Be(input);
-    }
-
-    [Fact]
-    public void LowercaseFirst_LowercaseFirst_LowercaseFirst()
-    {
-        // Arrange
-        var input = " hello world!!!";
+            // Act
+            var act = input.LowercaseFirst();
 
 
-        // Act
-        var act = input.LowercaseFirst();
+            // Assert
+            act.Should()
+                .Be(input);
+        }
+
+        [Fact]
+        public void LowercaseFirst_LowercaseFirst_LowercaseFirst()
+        {
+            // Arrange
+            var input = " hello world!!!";
 
 
-        // Assert
-        act.Should()
-            .Be(input);
-    }
-
-    [Fact]
-    public void StringLowercase_LowercaseFirst_EqualsInput()
-    {
-        // Arrange
-        var input = "hello world!!!";
+            // Act
+            var act = input.LowercaseFirst();
 
 
-        // Act
-        var act = input.LowercaseFirst();
+            // Assert
+            act.Should()
+                .Be(input);
+        }
+
+        [Fact]
+        public void StringLowercase_LowercaseFirst_EqualsInput()
+        {
+            // Arrange
+            var input = "hello world!!!";
 
 
-        // Assert
-        act.Should()
-            .Be("hello world!!!");
-    }
-
-    [Fact]
-    public void UpperFirstCharacter_LowercaseFirst_LowerFirstCharacter()
-    {
-        // Arrange
-        var input = "Hello world!!!";
+            // Act
+            var act = input.LowercaseFirst();
 
 
-        // Act
-        var act = input.LowercaseFirst();
+            // Assert
+            act.Should()
+                .Be("hello world!!!");
+        }
+
+        [Fact]
+        public void UpperFirstCharacter_LowercaseFirst_LowerFirstCharacter()
+        {
+            // Arrange
+            var input = "Hello world!!!";
 
 
-        // Assert
-        act.Should()
-            .Be("hello world!!!");
+            // Act
+            var act = input.LowercaseFirst();
+
+
+            // Assert
+            act.Should()
+                .Be("hello world!!!");
+        }
     }
 }

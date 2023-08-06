@@ -1,4 +1,4 @@
-***Helpers, extensions and utilities for manipulating***
+***Helpers, extensions and utilities for manipulating strings***
 
 ![Tests](https://github.com/TechNobre/PowerUtils.Text/actions/workflows/tests.yml/badge.svg)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=TechNobre_PowerUtils.Text&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=TechNobre_PowerUtils.Text)

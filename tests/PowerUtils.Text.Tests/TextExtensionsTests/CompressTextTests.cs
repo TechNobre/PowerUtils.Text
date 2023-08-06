@@ -1,93 +1,97 @@
-﻿namespace PowerUtils.Text.Tests.TextExtensionsTests;
+﻿using FluentAssertions;
+using Xunit;
 
-public class CompressTextTests
+namespace PowerUtils.Text.Tests.TextExtensionsTests
 {
-    [Fact]
-    public void Null_CompressText_Null()
+    public class CompressTextTests
     {
-        // Arrange
-        string input = null;
+        [Fact]
+        public void Null_CompressText_Null()
+        {
+            // Arrange
+            string input = null;
 
 
-        // Act
-        var act = input.CompressText(50);
+            // Act
+            var act = input.CompressText(50);
 
 
-        // Assert
-        act.Should()
-            .BeNull();
-    }
+            // Assert
+            act.Should()
+                .BeNull();
+        }
 
-    [Fact]
-    public void Empty_CompressText_Empty()
-    {
-        // Arrange
-        var input = "";
-
-
-        // Act
-        var act = input.CompressText(50);
+        [Fact]
+        public void Empty_CompressText_Empty()
+        {
+            // Arrange
+            var input = "";
 
 
-        // Assert
-        act.Should()
-            .BeEmpty();
-    }
-
-    [Fact]
-    public void EqualsMaxLength_CompressText_EqualsInput()
-    {
-        // Arrange
-        var input = "HelLo";
-        var maxLength = 5;
+            // Act
+            var act = input.CompressText(50);
 
 
-        // Act
-        var act = input.CompressText(maxLength);
+            // Assert
+            act.Should()
+                .BeEmpty();
+        }
+
+        [Fact]
+        public void EqualsMaxLength_CompressText_EqualsInput()
+        {
+            // Arrange
+            var input = "HelLo";
+            var maxLength = 5;
 
 
-        // Assert
-        act.Should()
-            .Be("HelLo");
-        act.Should()
-            .HaveLength(maxLength);
-    }
-
-    [Fact]
-    public void LessMaxLength_CompressText_EqualsInput()
-    {
-        // Arrange
-        var input = "Hello";
-        var maxLength = 4;
+            // Act
+            var act = input.CompressText(maxLength);
 
 
-        // Act
-        var act = input.CompressText(maxLength);
+            // Assert
+            act.Should()
+                .Be("HelLo");
+            act.Should()
+                .HaveLength(maxLength);
+        }
+
+        [Fact]
+        public void LessMaxLength_CompressText_EqualsInput()
+        {
+            // Arrange
+            var input = "Hello";
+            var maxLength = 4;
 
 
-        // Assert
-        act.Should()
-            .Be("Hel…");
-        act.Should()
-            .HaveLength(maxLength);
-    }
-
-    [Fact]
-    public void GreaterMaxLength_CompressText_CompressedText()
-    {
-        // Arrange
-        var input = "Hello world!!!";
-        var maxLength = 5;
+            // Act
+            var act = input.CompressText(maxLength);
 
 
-        // Act
-        var act = input.CompressText(maxLength);
+            // Assert
+            act.Should()
+                .Be("Hel…");
+            act.Should()
+                .HaveLength(maxLength);
+        }
+
+        [Fact]
+        public void GreaterMaxLength_CompressText_CompressedText()
+        {
+            // Arrange
+            var input = "Hello world!!!";
+            var maxLength = 5;
 
 
-        // Assert
-        act.Should()
-            .Be("Hell…");
-        act.Should()
-            .HaveLength(maxLength);
+            // Act
+            var act = input.CompressText(maxLength);
+
+
+            // Assert
+            act.Should()
+                .Be("Hell…");
+            act.Should()
+                .HaveLength(maxLength);
+        }
     }
 }

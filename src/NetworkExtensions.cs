@@ -74,7 +74,6 @@ namespace PowerUtils.Text
             return paths.ToString().TrimEnd(URL_SEPARATOR);
         }
 
-#if !NETFRAMEWORK
         /// <summary>
         /// Convert an object to a QueryString
         /// </summary>
@@ -99,8 +98,7 @@ namespace PowerUtils.Text
                 type != typeof(ulong) &&
                 type != typeof(float) &&
                 type != typeof(double) &&
-                type != typeof(decimal)
-            )
+                type != typeof(decimal))
             {
                 var properties = parameters
                     .GetType().GetProperties()
@@ -118,6 +116,5 @@ namespace PowerUtils.Text
 
             throw new NotSupportedException($"The type {type.Name} is not supported");
         }
-#endif
     }
 }

@@ -2,7 +2,7 @@
 
 ![Logo](https://raw.githubusercontent.com/TechNobre/PowerUtils.Text/main/assets/logo/logo_128x128.png)
 
-***Helpers, extensions and utilities for manipulating***
+***Helpers, extensions and utilities for manipulating strings***
 
 ![Tests](https://github.com/TechNobre/PowerUtils.Text/actions/workflows/tests.yml/badge.svg)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=TechNobre_PowerUtils.Text&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=TechNobre_PowerUtils.Text)
@@ -40,9 +40,9 @@
 
 
 ## Support to <a name="support-to"></a>
-- .NET 3.1 or more
-- .NET Framework 4.6.2 or more
-- .NET Standard 2.0 or more
+- .NET 6.0
+- .NET 5.0
+- .NET 3.1
 
 
 
@@ -177,8 +177,7 @@ var result = "http://localhost:8080".CombineURL("clients", "photos");
 ```
 
 #### object.ToQueryString(); <a name="object.ToQueryString"></a>
-Convert an object to a QueryString. 
-> (Does not supported in .NET Framework 4.6.2 and .NET Framework 4.8)
+Convert an object to a QueryString.
 
 ```csharp
 object parameters = new
