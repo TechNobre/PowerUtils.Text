@@ -14,6 +14,7 @@ env:
   SDK_VERSION_7: '7.0.306'
   SDK_VERSION_6: '6.0.412'
   SDK_VERSION_5: '5.0.408'
+  SDK_VERSION_3: '3.1.426'
   TEST_RESULTS_DIRECTORY: './TestResults'
 
 
@@ -34,6 +35,7 @@ jobs:
           ${{ env.SDK_VERSION_7 }}
           ${{ env.SDK_VERSION_6 }}
           ${{ env.SDK_VERSION_5 }}
+          ${{ env.SDK_VERSION_3 }}
 
     - name: "Restore dependencies"
       run: dotnet restore
