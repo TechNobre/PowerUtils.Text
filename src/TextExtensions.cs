@@ -2,7 +2,6 @@
 using System.Globalization;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 
 namespace PowerUtils.Text
 {
@@ -27,10 +26,12 @@ namespace PowerUtils.Text
                 return null;
             }
 
-            input = Regex.Replace(input, "\t", " "); // Remove tabs
-            input = Regex.Replace(input, " +", " "); // Remove more than two spaces
-            input = Regex.Replace(input, @"(\r\n?|\n) ", Environment.NewLine); // Clean spaces after line breaks
-            input = Regex.Replace(input, @" (\r\n?|\n)", Environment.NewLine); // Clean spaces before line breaks
+
+            input = RegexUtils.TabRegex().Replace(input, " "); // Replace tabs to one space
+            input = RegexUtils.MultiSpaceRegex().Replace(input, " "); // Replace double spaces to one space
+            input = RegexUtils.SpaceAfterLineBreakRegex().Replace(input, Environment.NewLine); // Clean spaces after line breaks
+            input = RegexUtils.SpaceBeforeLineBreakRegex().Replace(input, Environment.NewLine); // Clean spaces before line breaks
+
 
             input = input.Trim();
 
@@ -49,9 +50,7 @@ namespace PowerUtils.Text
                 return null;
             }
 
-            input = Regex.Replace(input, @"(\r\n?|\n)+", Environment.NewLine); // Clean double line breaks
-            input = Regex.Replace(input, @"(\r\n?|\n) +", Environment.NewLine); // Clean spaces after line breaks
-            input = Regex.Replace(input, @" +(\r\n?|\n)", Environment.NewLine); // Clean spaces before line breaks
+            input = RegexUtils.MultiLineBreakRegex().Replace(input, Environment.NewLine); // Clean double line breaks
 
             return input;
         }
@@ -142,8 +141,7 @@ namespace PowerUtils.Text
             var splitedText = string
                 .Join(
                     " ",
-                    input.ToLower().Split() // To lower and replace special spaces
-                )
+                    input.ToLower().Split()) // To lower and replace special spaces
                 .ToCharArray();
 
             splitedText[0] = char.ToUpper(splitedText[0]); // To Upper first character
@@ -184,16 +182,11 @@ namespace PowerUtils.Text
             foreach(var character in input)
             {
                 if(
-                    (character >= '0' && character <= '9')
-                    ||
-                    (character >= 'A' && character <= 'Z')
-                    ||
-                    (character >= 'a' && character <= 'z')
-                    ||
-                    character == '.'
-                    ||
-                    character == '_'
-                )
+                    (character >= '0' && character <= '9') ||
+                    (character >= 'A' && character <= 'Z') ||
+                    (character >= 'a' && character <= 'z') ||
+                    character == '.' ||
+                    character == '_')
                 {
                     sb.Append(character);
                 }
