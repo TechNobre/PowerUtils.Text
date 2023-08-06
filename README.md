@@ -24,7 +24,7 @@
         - [CleanExtraSpaces](#string.CleanExtraSpaces)
         - [CleanExtraLineBreak](#string.CleanExtraLineBreak)
         - [CleanExtraLineBreakAndLineBreak](#string.CleanExtraLineBreakAndLineBreak)
-        - [EmptyOrWhiteSpace](#string.EmptyOrWhiteSpace)
+        - [EmptyOrWhiteSpaceToNull](#string.EmptyOrWhiteSpaceToNull)
         - [CompressText](#string.CompressText)
         - [Truncate](#string.Truncate)
         - [CapitalizeName](#string.CapitalizeName)
@@ -36,7 +36,6 @@
         - [IsEmail](#string.IsEmail)
         - [CombineURL](#string.CombineURL)
         - [ToQueryString](#object.ToQueryString)
-- [Warning](#warning)
 - [Contribution](#contribution)
 - [License](./LICENSE)
 - [Changelog](./CHANGELOG.md)
@@ -94,12 +93,12 @@ Clean extra spaces, override tabs to one space, double spaces to one space and d
 var result = "   Hello \r\n\r\n\r\n  World!!! ".CleanExtraLineBreakAndLineBreak();
 ```
 
-#### string.EmptyOrWhiteSpace(); <a name="string.EmptyOrWhiteSpace"></a>
+#### string.EmptyOrWhiteSpaceToNull(); <a name="string.EmptyOrWhiteSpaceToNull"></a>
 Convert a string with empty or white spaces to null
 
 ```csharp
 // result = null
-var result = "       ".EmptyOrWhiteSpace();
+var result = "       ".EmptyOrWhiteSpaceToNull();
 ```
 
 #### string.CompressText(maxLength); <a name="string.CompressText"></a>
@@ -195,11 +194,6 @@ object parameters = new
 // result = ?Name=Nelson&Age=12&IsValide=True
 var result = parameters.ToQueryString();
 ```
-
-
-
-## :warning: Warning <a name="warning"></a>
-Discontinued the extension `string.EmptyOrWhiteSpace()`. New method `string.EmptyOrWhiteSpaceToNull()` will be removed in 2022/08/31.
 
 
 
