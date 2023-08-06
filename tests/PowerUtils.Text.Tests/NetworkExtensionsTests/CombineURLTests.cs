@@ -18,8 +18,8 @@ namespace PowerUtils.Text.Tests.NetworkExtensionsTests
 
 
             // Assert
-            act.Should()
-                .BeOfType<ArgumentException>();
+            act.Should().BeOfType<ArgumentException>();
+            act.Message.Should().Contain("The root URL cannot be null or WhiteSpace");
         }
 
         [Fact]
@@ -106,6 +106,7 @@ namespace PowerUtils.Text.Tests.NetworkExtensionsTests
 
         [Theory]
         [InlineData("fake", null, "fake")]
+        [InlineData("fake", "", "fake")]
         [InlineData("www.fake.com", "fake", "www.fake.com/fake")]
         [InlineData("www.fake.com", "fake1/fake2/fake3", "www.fake.com/fake1/fake2/fake3")]
         [InlineData("https://www.fake.com", "fake", "https://www.fake.com/fake")]

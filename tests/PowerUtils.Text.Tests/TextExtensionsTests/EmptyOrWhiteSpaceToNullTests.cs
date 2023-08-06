@@ -38,6 +38,22 @@ namespace PowerUtils.Text.Tests.TextExtensionsTests
         }
 
         [Fact]
+        public void TwoSpaces_EmptyOrWhiteSpace_Null()
+        {
+            // Arrange
+            var input = "  ";
+
+
+            // Act
+            var act = input.EmptyOrWhiteSpaceToNull();
+
+
+            // Assert
+            act.Should()
+                .BeNull();
+        }
+
+        [Fact]
         public void WithWhiteSpaces_EmptyOrWhiteSpace_Null()
         {
             // Arrange

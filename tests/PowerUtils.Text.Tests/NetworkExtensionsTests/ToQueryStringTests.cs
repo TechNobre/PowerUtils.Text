@@ -18,8 +18,8 @@ namespace PowerUtils.Text.Tests.NetworkExtensionsTests
 
 
             // Assert
-            act.Should()
-                .BeOfType<ArgumentNullException>();
+            act.Should().BeOfType<ArgumentNullException>();
+            act.Message.Should().Contain("The parameters cannot be null");
         }
 
         [Fact]
@@ -34,8 +34,8 @@ namespace PowerUtils.Text.Tests.NetworkExtensionsTests
 
 
             // Assert
-            act.Should()
-                .BeOfType<NotSupportedException>();
+            act.Should().BeOfType<NotSupportedException>();
+            act.Message.Should().Be("The type Int16 is not supported");
         }
 
         [Fact]

@@ -23,7 +23,7 @@ namespace PowerUtils.Text
             }
 
 
-            return RegexUtils.EmailRegex().IsMatch(email);
+            return RegexUtils.EmailRegex.IsMatch(email);
         }
 
         /// <summary>
