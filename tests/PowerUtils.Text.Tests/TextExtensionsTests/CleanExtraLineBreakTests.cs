@@ -67,7 +67,7 @@ namespace PowerUtils.Text.Tests.TextExtensionsTests
 
             // Assert
             act.Should()
-                .Be("  Hello  world..." + Environment.NewLine + "I am Nelson  Nobre     ");
+                .Be("  Hello  world...  " + Environment.NewLine + "  I am Nelson  Nobre     ");
         }
 
         [Fact]
