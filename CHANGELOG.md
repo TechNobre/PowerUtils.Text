@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/TechNobre/PowerUtils.Text/compare/v3.0.0...v3.1.0) (2024-09-14)
+
+
+### Features
+
+* Added support to .NET8 ([7317b5e](https://github.com/TechNobre/PowerUtils.Text/commit/7317b5e8f6006bdc577b22ea2593f6863df056f1))
+
 # [3.0.0](https://github.com/TechNobre/PowerUtils.Text/compare/v2.2.0...v3.0.0) (2023-08-06)
 
 
