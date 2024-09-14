@@ -17,32 +17,31 @@
 [![License: MIT](https://img.shields.io/github/license/TechNobre/PowerUtils.Text.svg)](https://github.com/TechNobre/PowerUtils.Text/blob/main/LICENSE)
 
 
-- [Support](#support-to)
-- [How to use](#how-to-use)
-    - [Installation](#installation)
-    - [TextExtensions](#TextExtensions)
-        - [CleanExtraSpaces](#string.CleanExtraSpaces)
-        - [CleanExtraLineBreak](#string.CleanExtraLineBreak)
-        - [CleanExtraLineBreakAndLineBreak](#string.CleanExtraLineBreakAndLineBreak)
-        - [EmptyOrWhiteSpaceToNull](#string.EmptyOrWhiteSpaceToNull)
-        - [CompressText](#string.CompressText)
-        - [Truncate](#string.Truncate)
-        - [CapitalizeName](#string.CapitalizeName)
-        - [CleanSpecialCharacters](#string.CleanSpecialCharacters)
-        - [UppercaseFirst](#string.UppercaseFirst)
-        - [LowercaseFirst](#string.LowercaseFirst)
-        - [ToSnakeCase](#string.ToSnakeCase)
-    - [NetworkExtensions](#NetworkExtensions)
-        - [IsEmail](#string.IsEmail)
-        - [CombineURL](#string.CombineURL)
-        - [ToQueryString](#object.ToQueryString)
-- [Contribution](#contribution)
-- [License](./LICENSE)
-- [Changelog](./CHANGELOG.md)
+- [Support to ](#support-to-)
+- [How to use ](#how-to-use-)
+  - [Install NuGet package ](#install-nuget-package-)
+  - [TextExtensions ](#textextensions-)
+    - [string.CleanExtraSpaces(); ](#stringcleanextraspaces-)
+    - [string.CleanExtraLineBreak(); ](#stringcleanextralinebreak-)
+    - [string.CleanExtraLineBreakAndLineBreak(); ](#stringcleanextralinebreakandlinebreak-)
+    - [string.EmptyOrWhiteSpaceToNull(); ](#stringemptyorwhitespacetonull-)
+    - [string.CompressText(maxLength); ](#stringcompresstextmaxlength-)
+    - [string.Truncate(maxLength); ](#stringtruncatemaxlength-)
+    - [string.CapitalizeName(); ](#stringcapitalizename-)
+    - [string.CleanSpecialCharacters(substitute = ""); ](#stringcleanspecialcharacterssubstitute---)
+    - [string.UppercaseFirst(); ](#stringuppercasefirst-)
+    - [string.LowercaseFirst(); ](#stringlowercasefirst-)
+    - [string.ToSnakeCase(); ](#stringtosnakecase-)
+  - [TextExtensions ](#textextensions--1)
+    - [string.IsEmail(); ](#stringisemail-)
+    - [string.CombineURL(); ](#stringcombineurl-)
+    - [object.ToQueryString(); ](#objecttoquerystring-)
+- [Contribution ](#contribution-)
 
 
 
 ## Support to <a name="support-to"></a>
+- .NET 8.0
 - .NET 7.0
 - .NET 6.0
 - .NET 5.0
