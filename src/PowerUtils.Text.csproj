@@ -4,7 +4,7 @@
   <PropertyGroup>
     <ProjectGuid>4b8f1c43-97b4-48fe-b280-7620c63f4be6</ProjectGuid>
 
-    <TargetFrameworks>netcoreapp3.1;net5.0;net6.0;net7.0</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1;net5.0;net6.0;net7.0;net8.0</TargetFrameworks>
 
     <AssemblyName>PowerUtils.Text</AssemblyName>
     <RootNamespace>PowerUtils.Text</RootNamespace>
@@ -85,7 +85,7 @@
     </PackageReference>
   </ItemGroup>
 
-  
+
   <ItemGroup>
     <SonarQubeSetting Include="sonar.coverage.exclusions">
       <Value>RegexUtils.cs</Value>
