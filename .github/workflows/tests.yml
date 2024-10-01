@@ -38,6 +38,7 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: |
+          ${{ env.SDK_VERSION_8 }}
           ${{ env.SDK_VERSION_7 }}
           ${{ env.SDK_VERSION_6 }}
           ${{ env.SDK_VERSION_5 }}
