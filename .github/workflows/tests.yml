@@ -11,7 +11,7 @@ on:
 
 
 env:
-  SDK_VERSION_8: '8.0.401'
+  SDK_VERSION_8: '8.0.402'
   SDK_VERSION_7: '7.0.410'
   SDK_VERSION_6: '6.0.425'
   SDK_VERSION_5: '5.0.408'
