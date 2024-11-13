@@ -1,3 +1,10 @@
+# [3.2.0](https://github.com/TechNobre/PowerUtils.Text/compare/v3.1.0...v3.2.0) (2024-11-13)
+
+
+### Features
+
+* Added support to .NET9 ([c3a9091](https://github.com/TechNobre/PowerUtils.Text/commit/c3a9091dfe1270c46d95b27b589c1cac10935339))
+
 # [3.1.0](https://github.com/TechNobre/PowerUtils.Text/compare/v3.0.0...v3.1.0) (2024-09-14)
 
 
