@@ -1,3 +1,15 @@
+# [4.0.0](https://github.com/TechNobre/PowerUtils.Text/compare/v3.2.0...v4.0.0) (2025-08-30)
+
+
+### Bug Fixes
+
+* Marked all implementations as `Obsolete` ([8eaf7f5](https://github.com/TechNobre/PowerUtils.Text/commit/8eaf7f580389a2becbb7c6b656ba77f298049b14))
+
+
+### BREAKING CHANGES
+
+* Deprecated package
+
 # [3.2.0](https://github.com/TechNobre/PowerUtils.Text/compare/v3.1.0...v3.2.0) (2024-11-13)
 
 
