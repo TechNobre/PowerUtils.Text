@@ -8,6 +8,7 @@ namespace PowerUtils.Text
     /// <summary>
     /// Extensions for network strings
     /// </summary>
+    [Obsolete("This package has been discontinued because it never evolved, and the code present in this package does not justify its continuation. It is preferable to implement this code directly in the project if necessary.")]
     public static class NetworkExtensions
     {
         /// <summary>
@@ -15,6 +16,7 @@ namespace PowerUtils.Text
         /// </summary>
         /// <param name="email">String to check</param>
         /// <returns>If it is an email</returns>
+        [Obsolete("This package has been discontinued because it never evolved, and the code present in this package does not justify its continuation. It is preferable to implement this code directly in the project if necessary.")]
         public static bool IsEmail(this string email)
         {
             if(string.IsNullOrWhiteSpace(email))
@@ -33,6 +35,7 @@ namespace PowerUtils.Text
         /// <param name="segments">Next segments of the URL</param>
         /// <returns>Combined URL</returns>
         /// <exception cref="ArgumentException">When the <paramref name="root">root</paramref> is null or WhiteSpace</exception>
+        [Obsolete("This package has been discontinued because it never evolved, and the code present in this package does not justify its continuation. It is preferable to implement this code directly in the project if necessary.")]
         public static string CombineURL(this string root, params string[] segments)
         {
             const char URL_SEPARATOR = '/';
@@ -79,6 +82,7 @@ namespace PowerUtils.Text
         /// <returns>QueryString</returns>
         /// <exception cref="ArgumentNullException">When the <paramref name="parameters">parameters</paramref> is null</exception>
         /// <exception cref="NotSupportedException">When the <paramref name="parameters">parameters</paramref> is of the type not supported</exception>
+        [Obsolete("This package has been discontinued because it never evolved, and the code present in this package does not justify its continuation. It is preferable to implement this code directly in the project if necessary.")]
         public static string ToQueryString<T>(this T parameters) where T : new()
         {
             if(parameters == null)
