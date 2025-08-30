@@ -8,6 +8,7 @@ namespace PowerUtils.Text
     /// <summary>
     /// Extensions for manipulating strings
     /// </summary>
+    [Obsolete("This package has been discontinued because it never evolved, and the code present in this package does not justify its continuation. It is preferable to implement this code directly in the project if necessary.")]
     public static class TextExtensions
     {
         private static readonly char[] _charsToSplit1 = new char[] { ' ', '-', '.', '(' };
@@ -19,6 +20,7 @@ namespace PowerUtils.Text
         /// </summary>
         /// <param name="input">Input text</param>
         /// <returns>Clear string</returns>
+        [Obsolete("This package has been discontinued because it never evolved, and the code present in this package does not justify its continuation. It is preferable to implement this code directly in the project if necessary.")]
         public static string CleanExtraSpaces(this string input)
         {
             if(input == null)
@@ -41,6 +43,7 @@ namespace PowerUtils.Text
         /// </summary>
         /// <param name="input">Input text</param>
         /// <returns>Clear text</returns>
+        [Obsolete("This package has been discontinued because it never evolved, and the code present in this package does not justify its continuation. It is preferable to implement this code directly in the project if necessary.")]
         public static string CleanExtraLineBreak(this string input)
         {
             if(input == null)
@@ -58,6 +61,7 @@ namespace PowerUtils.Text
         /// </summary>
         /// <param name="input">Input text</param>
         /// <returns>Clear text</returns>
+        [Obsolete("This package has been discontinued because it never evolved, and the code present in this package does not justify its continuation. It is preferable to implement this code directly in the project if necessary.")]
         public static string CleanExtraLineBreakAndLineBreak(this string input)
             => input
                 .CleanExtraSpaces()
@@ -68,6 +72,7 @@ namespace PowerUtils.Text
         /// </summary>
         /// <param name="input">Input text</param>
         /// <returns>Clear text</returns>
+        [Obsolete("This package has been discontinued because it never evolved, and the code present in this package does not justify its continuation. It is preferable to implement this code directly in the project if necessary.")]
         public static string EmptyOrWhiteSpaceToNull(this string input)
         {
             if(string.IsNullOrWhiteSpace(input))
@@ -86,6 +91,7 @@ namespace PowerUtils.Text
         /// <param name="input">Text to be checked</param>
         /// <param name="maxLength">Maximum character length</param>
         /// <returns>Compressed text</returns>
+        [Obsolete("This package has been discontinued because it never evolved, and the code present in this package does not justify its continuation. It is preferable to implement this code directly in the project if necessary.")]
         public static string CompressText(this string input, int maxLength)
         {
             if(input == null)
@@ -113,6 +119,7 @@ namespace PowerUtils.Text
         /// <param name="input">Input string</param>
         /// <param name="maxLength">Maximum character length</param>
         /// <returns>Compressed text</returns>
+        [Obsolete("This package has been discontinued because it never evolved, and the code present in this package does not justify its continuation. It is preferable to implement this code directly in the project if necessary.")]
         public static string Truncate(this string input, int maxLength)
         {
             if(input == null)
@@ -129,6 +136,7 @@ namespace PowerUtils.Text
         /// </summary>
         /// <param name="input">Input text</param>
         /// <returns>Capitalized name</returns>
+        [Obsolete("This package has been discontinued because it never evolved, and the code present in this package does not justify its continuation. It is preferable to implement this code directly in the project if necessary.")]
         public static string CapitalizeName(this string input)
         {
             if(string.IsNullOrEmpty(input))
@@ -169,6 +177,7 @@ namespace PowerUtils.Text
         /// <param name="input">Input string to clear</param>
         /// <param name="substitute">New character to override special characters</param>
         /// <returns>New string clean</returns>
+        [Obsolete("This package has been discontinued because it never evolved, and the code present in this package does not justify its continuation. It is preferable to implement this code directly in the project if necessary.")]
         public static string CleanSpecialCharacters(this string input, string substitute = "")
         {
             if(input == null)
@@ -201,6 +210,7 @@ namespace PowerUtils.Text
         /// </summary>
         /// <param name="input">Input text</param>
         /// <returns>New string</returns>
+        [Obsolete("This package has been discontinued because it never evolved, and the code present in this package does not justify its continuation. It is preferable to implement this code directly in the project if necessary.")]
         public static string UppercaseFirst(this string input)
         {
             if(string.IsNullOrEmpty(input))
@@ -218,6 +228,7 @@ namespace PowerUtils.Text
         /// </summary>
         /// <param name="input">Text to be transformed</param>
         /// <returns>Text transformed</returns>
+        [Obsolete("This package has been discontinued because it never evolved, and the code present in this package does not justify its continuation. It is preferable to implement this code directly in the project if necessary.")]
         public static string LowercaseFirst(this string input)
         {
             if(string.IsNullOrEmpty(input))
@@ -235,6 +246,7 @@ namespace PowerUtils.Text
         /// </summary>
         /// <param name="input">Text to be transformed</param>
         /// <returns>Text transformed</returns>
+        [Obsolete("This package has been discontinued because it never evolved, and the code present in this package does not justify its continuation. It is preferable to implement this code directly in the project if necessary.")]
         public static string ToSnakeCase(this string input)
         { // Reference1: https://stackoverflow.com/questions/63055621/how-to-convert-camel-case-to-snake-case-with-two-capitals-next-to-each-other
           // Reference1: https://github.com/efcore/EFCore.NamingConventions/blob/main/EFCore.NamingConventions/Internal/SnakeCaseNameRewriter.cs
