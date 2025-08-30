@@ -1,5 +1,11 @@
 # PowerUtils.Text
 
+
+# :warning: DEPRECATED
+
+This package has been discontinued because it never evolved, and the code present in this package does not justify its continuation. It is preferable to implement this code directly in the project if necessary.
+
+
 ![Logo](https://raw.githubusercontent.com/TechNobre/PowerUtils.Text/main/assets/logo/logo_128x128.png)
 
 ***Helpers, extensions and utilities for manipulating strings***
